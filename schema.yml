@@ -8798,6 +8798,32 @@ paths:
                         id: 1
                         path: storage/static/user/user_avatar.png
       deprecated: false
+    delete: 
+      tags:
+        - Notice
+      summary: Delete Notice
+      operationId: DeleteNotice
+      parameters:
+        - name: userID
+          in: path
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
   /api/v1/hrm/notices:
     get:
       tags:
