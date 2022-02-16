@@ -3,7 +3,7 @@ info:
   title: Shareel HRM API
   contact: {}
   version: '1.0'
-  #NgoCongTuan comment
+  #NgoCongTuan comment check second
 servers:
   - url: https://dev-api.upd.life
   - url: https://dev-admin-api.upd.life
