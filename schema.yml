@@ -8804,6 +8804,15 @@ paths:
       summary: Delete Notice
       operationId: DeleteNotice
       parameters:
+        - name: id
+          in: path
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: integer
+            format: int32
+            example: 1
         - name: Accept
           in: header
           description: ''
