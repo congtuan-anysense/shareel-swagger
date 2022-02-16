@@ -3,7 +3,6 @@ info:
   title: Shareel HRM API
   contact: {}
   version: '1.0'
-  #NgoCongTuan comment check second
 servers:
   - url: https://dev-api.upd.life
   - url: https://dev-admin-api.upd.life
@@ -6609,128 +6608,8 @@ paths:
             example: application/json
       responses:
         '200':
-          description: OK
-          headers:
-            Host:
-              content:
-                text/plain:
-                  schema:
-                    type: string
-                  example: 127.0.0.1:8001
-            Date:
-              content:
-                text/plain:
-                  schema:
-                    type: string
-                  example: Tue, 08 Dec 2020 09:52:58 GMT
-            Connection:
-              content:
-                text/plain:
-                  schema:
-                    type: string
-                  example: close
-            X-Powered-By:
-              content:
-                text/plain:
-                  schema:
-                    type: string
-                  example: PHP/7.3.11
-            Cache-Control:
-              content:
-                text/plain:
-                  schema:
-                    type: string
-                  example: no-cache, private
-            Access-Control-Allow-Origin:
-              content:
-                text/plain:
-                  schema:
-                    type: string
-                  example: '*'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GetAllclientList'
-              example:
-                message: Success!
-                clients:
-                  - id: 1
-                    user_id: 8
-                    name: Arnold Littel
-                    nickname: arnoldo740
-                    dob: 2020-12-08
-                    gender: female
-                    is_receive_email_magazine: true
-                    upload_id: 1
-                    created_by: 1
-                    updated_by: 1
-                    deleted_by: ''
-                    created_at: 2020-12-08 05:40:59
-                    updated_at: 2020-12-08 05:40:59
-                    deleted_at: ''
-                    client_name: Arnold Littel
-                    max_id: 77
-                    avg_rating: '3'
-                    rating_reciever_id: 8
-                    membership_id: 3
-                    membership_name: STANDARD
-                    email: shareel+client@gmail.com
-                pagination:
-                  first_page_url: http://127.0.0.1:8001/api/v1/admin/users/clients/list?page=1
-                  from: 1
-                  last_page: 1
-                  last_page_url: http://127.0.0.1:8001/api/v1/admin/users/clients/list?page=1
-                  next_page_url: ''
-                  path: http://127.0.0.1:8001/api/v1/admin/users/clients/list
-                  per_page: 10
-                  prev_page_url: ''
-                  to: 1
-                  total: 1
-        '201':
-          description: Created
-          headers:
-            Host:
-              content:
-                text/plain:
-                  schema:
-                    type: string
-                  example: 127.0.0.1:8001
-            Date:
-              content:
-                text/plain:
-                  schema:
-                    type: string
-                  example: Wed, 18 Nov 2020 09:50:44 GMT
-            Connection:
-              content:
-                text/plain:
-                  schema:
-                    type: string
-                  example: close
-            X-Powered-By:
-              content:
-                text/plain:
-                  schema:
-                    type: string
-                  example: PHP/7.3.11
-            Cache-Control:
-              content:
-                text/plain:
-                  schema:
-                    type: string
-                  example: no-cache, private
-            Access-Control-Allow-Origin:
-              content:
-                text/plain:
-                  schema:
-                    type: string
-                  example: '*'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/%7B%7Bapp_admin_url%7D%7D~1api~1v1~1admin~1invite~1user'
-              example:
-                message: Successfully sent invitations!
+          description: ''
+          headers: {}
       deprecated: false
   /api/v1/admin/users/advisers/list:
     post:
