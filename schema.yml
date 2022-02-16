@@ -8430,7 +8430,7 @@ paths:
           explode: true
           schema:
             type: string
-            example: 2021-02-18
+            example: 2021/02/18
         - name: registration_end_date
           in: query
           description: ''
@@ -8439,7 +8439,7 @@ paths:
           explode: true
           schema:
             type: string
-            example: 2021-10-21
+            example: 2021/10/21
         - name: sort
           in: query
           description: ''
