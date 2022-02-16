@@ -8804,13 +8804,6 @@ paths:
       summary: Delete Notice
       operationId: DeleteNotice
       parameters:
-        - name: userID
-          in: path
-          description: ''
-          required: true
-          style: simple
-          schema:
-            type: string
         - name: Accept
           in: header
           description: ''
