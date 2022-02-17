@@ -8824,13 +8824,14 @@ paths:
       responses:
         '200':
           description: 'Success'
-          headers: {}
           content:
             application/json:
-              schema:
-                $ref: '#/components/schemas/GETAllNotices'
-              example:
-                message: Success!
+              schema: 
+                type: object
+                properties: 
+                  message:
+                    type: string
+                    example: Success!
       deprecated: false
   /api/v1/hrm/notices:
     get:
