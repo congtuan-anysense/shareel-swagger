@@ -13658,10 +13658,6 @@ paths:
           application/x-www-form-urlencoded:
             encoding: {}
             schema:
-              required:
-                - per_page
-                - from_date
-                - to_date
               type: object
               properties:
                 per_page:
