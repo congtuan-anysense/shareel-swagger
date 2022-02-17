@@ -13665,13 +13665,13 @@ paths:
           schema:
             type: string
             description: nullable|date|date_format:Y-m-d|before_or_equal:to_date
-            example: 2020/10/100
+            example: '2020-10-10'
         - name: to_date
           in: query
           schema:
             type: string
             description: nullable|date|date_format:Y-m-d
-            example: 2022/10/10
+            example: '2022-10-10'
       responses:
         '200':
           description: ""
