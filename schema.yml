@@ -13653,26 +13653,25 @@ paths:
           schema:
             type: string
             example: application/json
-      requestBody:
-        content:
-          application/x-www-form-urlencoded:
-            encoding: {}
-            schema:
-              type: object
-              properties:
-                per_page:
-                  type: integer
-                  format: int32
-                  description: nullable|integer
-                  example: 10
-                from_date:
-                  type: string
-                  description: nullable|date|date_format:Y-m-d|before_or_equal:to_date
-                  example: 2020/10/100
-                to_date: 
-                  type: string
-                  description: nullable|date|date_format:Y-m-d
-                  example: 2022/10/10
+        - name: per_page
+          in: query
+          schema:
+            type: integer
+            format: int32
+            description: nullable|integer
+            example: 10
+        - name: from_date
+          in: query
+          schema:
+            type: string
+            description: nullable|date|date_format:Y-m-d|before_or_equal:to_date
+            example: 2020/10/100
+        - name: to_date
+          in: query
+          schema:
+            type: string
+            description: nullable|date|date_format:Y-m-d
+            example: 2022/10/10
       responses:
         '200':
           description: ""
