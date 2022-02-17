@@ -894,11 +894,11 @@ paths:
                 email:
                   type: string
                   description: required|regex:/^[a-zA-Z0-9+._]*@[a-zA-Z0-9]*(\.([a-zA-Z]){2,3}){1,2}/u|email
-                  example: rasel+1@client.com
+                  example: thinhnd194+1@gmail.com
                 password:
                   type: string
                   description: required|confirmed|regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9.-_]{8,16}$/
-                  example: passwordD1
+                  example: Thinhtrung78
         required: false
       responses:
         '200':
@@ -8963,6 +8963,7 @@ paths:
         - Notice
       summary: All Notice
       operationId: AllNotice
+      security: []
       parameters:
         - name: Accept
           in: header
@@ -11493,6 +11494,7 @@ paths:
         - Faq
       summary: Get All Faqs2
       operationId: GetAllFaqs2
+      security: []
       parameters:
         - name: page
           in: query
@@ -12336,6 +12338,7 @@ paths:
       summary: user see all membership information
       operationId: userseeallmembershipinformation
       parameters: []
+      security: []
       responses:
         '200':
           description: OK
