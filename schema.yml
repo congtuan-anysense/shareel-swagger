@@ -1304,6 +1304,7 @@ paths:
         - Category
       summary: Get All Categories1
       operationId: GetAllCategories1
+      security: []
       parameters:
         - name: Accept
           in: header
@@ -7726,6 +7727,27 @@ paths:
           headers: {}
       deprecated: false
   /api/v1/client/features:
+    get:
+      tags:
+        - Feature Client
+      summary: Get list without pagination client
+      operationId: Getlistwithoutpagination12
+      security: []
+      parameters:
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: true
+  /api/v1/hrm/client/features:
     get:
       tags:
         - Feature Client
