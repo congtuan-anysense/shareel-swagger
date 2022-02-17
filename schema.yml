@@ -9348,7 +9348,7 @@ paths:
           style: simple
           schema:
             type: string
-            example: application/json
+            example: 1
         - name: Accept
           in: header
           description: ''
