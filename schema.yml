@@ -2310,6 +2310,24 @@ paths:
         - Coupon
       summary: Get coupon history
       description: Get coupon history
+      operationId: showusercouponhistory
+      parameters:
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+        - name: userID
+          in: path
+          description: 'user_id'
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: 2
       responses:
         '200': 
           description: Success
