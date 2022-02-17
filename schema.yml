@@ -6357,7 +6357,7 @@ paths:
           description: ''
           headers: {}
       deprecated: false
-  /api/v1/admin/user/adviser/{adviserId}/update/profile:
+  /api/v1/admin/user/adviser/{userID}/update/profile:
     post:
       tags:
         - User
@@ -6403,7 +6403,7 @@ paths:
                 name:
                   type: string
                   description: nullable|string|min:5|max:30
-                  example: tan
+                  example: name-swagger
                 carrier:
                   type: string
                   description: nullable|string|max:255
@@ -6444,6 +6444,9 @@ paths:
                   type: string
                   description: nullable|date|date_format:Y/m/d  -&gt; dob instead of age
                   example: 2021/02/21
+                identification_status:
+                  type: string
+                  example: unconfirmed
         required: false
       responses:
         '200':
