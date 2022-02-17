@@ -6358,7 +6358,7 @@ paths:
           headers: {}
       deprecated: false
   /api/v1/admin/user/adviser/{userID}/update/profile:
-    post:
+    put:
       tags:
         - User
       summary: update adviser profile
@@ -9290,6 +9290,26 @@ paths:
         - PaymentLog
       summary: payment log individual
       operationId: paymentlogindividual
+      parameters:
+        - name: id
+          in: path
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: integer
+            format: int32
+            example: 1
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /api/v1/admin/payment-logs/{id}:
+    get:
+      tags:
+        - PaymentLog
+      summary: payment-logs individual
       parameters:
         - name: id
           in: path
