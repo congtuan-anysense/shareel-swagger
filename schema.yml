@@ -2304,6 +2304,15 @@ paths:
           headers: {}
       deprecated: false
   /api/v1/admin/coupons/history:
+    get:
+      tags:
+        - Coupon
+      summary: Get coupon history
+      description: Get coupon history
+      responses:
+        '200': 
+          description: Success
+          headers: {}
     post:
       tags:
         - Coupon
