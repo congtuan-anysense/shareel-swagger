@@ -9374,7 +9374,7 @@ paths:
           description: ''
           headers: {}
       deprecated: false
-  /payment-logs/{id}/payment-status:
+  /api/v1/admin/payment-logs/{id}/payment-status:
     put:
       tags:
           - PaymentLog
