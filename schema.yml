@@ -610,7 +610,7 @@ paths:
                   type: string
                   example: thinh adviser
                 dob_full:
-                  type: date
+                  type: string
                   example: 2019/12/18
                 terms_of_use:
                   type: number
@@ -1537,8 +1537,50 @@ paths:
             example: application/json
       responses:
         '200':
-          description: ''
-          headers: {}
+          description: 'Success'
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Success!
+                  memberships:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                          example: 1
+                        name:
+                          type: string
+                          example: "FREE"
+                        pricing:
+                          type: string
+                          example: "0"
+                        benefits:
+                          type: string
+                          example: "{\"1\":\"{\\\"id\\\":1,\\\"name\\\":\\\"\\\\u30c6\\\\u30ad\\\\u30b9\\\\u30c8\\\\u30c6\\\\u30ad\\\\u30b9\\\\u30c8\\\\u30c6\\\\u30ad\\\\u30b9\\\\u30c8\\\",\\\"status\\\":true}\"}"
+                        created_at:
+                          type: string
+                          example: ""
+                        updated_at: 
+                          type: string
+                          example: ""
+                        deleted_at: 
+                          type: string
+                          example: ""
+                        created_by:
+                          type: string
+                          example: ""
+                        updated_by: 
+                          type: string
+                          example: ""
+                        deleted_by: 
+                          type: string
+                          example: ""
       deprecated: false
   /api/v1/admin/rating/questions:
     get:
