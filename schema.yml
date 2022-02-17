@@ -3602,7 +3602,7 @@ paths:
                 date:
                   type: string
                   description: required|date
-                  example: 2020-10-01
+                  example: 2020/10/01
         required: false
       responses:
         '200':
@@ -10243,9 +10243,9 @@ paths:
               type: object
               properties:
                 id:
-                  type: string
-                  description: required|integer &nbsp;&nbsp;schedulesのidを送る
-                  example: 4
+                  type: number
+                  example: 56
+        required: false
       responses:
         '200':
           description: '    {
@@ -10312,6 +10312,7 @@ paths:
         - Schedule
       summary: Adviser schedule search
       operationId: Adviserschedulesearch
+      security: []
       parameters:
         - name: adviserID
           in: path
@@ -10341,7 +10342,7 @@ paths:
               properties:
                 date:
                   type: string
-                  example: 2021-01-26
+                  example: 2021/01/26
         required: false
       responses:
         '200':
