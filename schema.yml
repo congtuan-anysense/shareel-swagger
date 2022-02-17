@@ -9374,6 +9374,47 @@ paths:
           description: ''
           headers: {}
       deprecated: false
+  /payment-logs/{id}/payment-status:
+    put:
+      tags:
+          - PaymentLog
+      summary: payment log status for specific id
+      parameters:
+        - name: id
+          in: path
+          description: 'id'
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: 1
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            encoding: {}
+            schema:
+              required:
+                - status
+              type: object
+              properties:
+                status:
+                  description: value must be in a set (実売上, 仮売上, キャンセル)
+                  type: string
+                  enum: ['実売上', '仮売上', 'キャンセル']
+                  example: '実売上'
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
   /api/v1/admin/invite/user:
     post:
       tags:
