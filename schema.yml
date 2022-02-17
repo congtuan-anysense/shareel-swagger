@@ -8692,7 +8692,7 @@ paths:
                 publish_start_time:
                   type: string
                   description: 公開開始(時)
-                  example: 12:02
+                  example: '12:10:10'
                 publish_end_date:
                   type: string
                   description: 公開終了(日)
@@ -8700,7 +8700,7 @@ paths:
                 publish_end_time:
                   type: string
                   description: 公開終了(時)
-                  example: 12:10
+                  example: '12:10:10'
         required: false
       responses:
         '200':
