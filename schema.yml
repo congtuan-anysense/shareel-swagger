@@ -6223,7 +6223,7 @@ paths:
                   id: 4
                   user_id: 22
                   name: Tanvir
-                  dob: 1983-02-16
+                  dob: 1983/02/16
                   age: '20'
                   gender: male
                   is_receive_email_newsletter: false
@@ -6253,8 +6253,17 @@ paths:
                   updated_by: 1
                   deleted_by: ''
                   deleted_at: ''
-                  created_at: 2021-02-16T09:01:39Z
-                  updated_at: 2021-02-18T03:26:33Z
+                  created_at: '2021-02-16T09:01:39Z'
+                  updated_at: '2021-02-18T03:26:33Z'
+                  identification_status: unconfirmed
+                  approved_status: unconfirmed
+                  certified_badge_status: 'no'
+                  bank_account_type: ''
+                  bank_name: ''
+                  number_of_favorite: 0
+                  is_certified: false
+                  rating_average: 0
+                  zoom: ''
                   user:
                     id: 22
                     email: tanvir+123@gmail.co
