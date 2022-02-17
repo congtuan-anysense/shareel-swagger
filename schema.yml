@@ -9325,6 +9325,16 @@ paths:
           description: ''
           headers: {}
       deprecated: false
+  /api/v1/admin/payment-logs/status:
+    get:
+      tags:
+          - PaymentLog
+      summary: payment log status
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
   /api/v1/admin/invite/user:
     post:
       tags:
