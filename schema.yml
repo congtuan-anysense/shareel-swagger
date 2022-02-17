@@ -13638,6 +13638,7 @@ paths:
         '200':
           description: ""
           headers: {}
+      deprecated: false
   /api/v1/admin/transactions:
     get:
       tags:
@@ -13676,6 +13677,42 @@ paths:
         '200':
           description: ""
           headers: {}
+  /api/v1/admin/transactions/export:
+    post:
+      tags:
+        - TRANSACTION
+      summary: Export list transaction
+      description: Export list transaction
+      parameters:
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            encoding: {}
+            schema:
+              required:
+                - ids
+              type: object
+              properties:
+                ids:
+                  type: array
+                  description: list transation ids
+                  items:
+                    type: string
+                    description: transaction id
+                  example: ['1']
+      responses:
+        '200':
+          description: ""
+          headers: {}
+      deprecated: false
 components:
   schemas:
     ShowARatingQuestion:
