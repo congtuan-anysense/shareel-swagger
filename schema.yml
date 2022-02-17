@@ -4045,6 +4045,7 @@ paths:
         - Area
       summary: Get All Areas1
       operationId: GetAllAreas1
+      security: []
       parameters:
         - name: Accept
           in: header
@@ -9111,6 +9112,7 @@ paths:
         - Notice
       summary: Notice details
       operationId: Noticedetails
+      security: []
       parameters:
         - name: noticeID
           in: path
@@ -11225,6 +11227,7 @@ paths:
         - Adviser
       summary: Adviser Search
       operationId: AdviserSearch
+      security: []
       parameters:
         - name: Accept
           in: header
