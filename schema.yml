@@ -13705,9 +13705,10 @@ paths:
                   type: array
                   description: list transation ids
                   items:
-                    type: string
+                    type: integer
+                    format: int32
                     description: transaction id
-                  example: ['1', '2', '3']
+                  example: [1, 2, 3]
       responses:
         '200':
           description: ""
