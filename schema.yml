@@ -6139,7 +6139,7 @@ paths:
           description: ''
           headers: {}
       deprecated: false
-  /api/v1/admin/user/adviser/{userID}/details:
+  /api/v1/admin/user/adviser/{id}/details:
     get:
       tags:
         - User
@@ -6164,7 +6164,7 @@ paths:
           schema:
             type: string
             example: desc
-        - name: userID
+        - name: id
           in: path
           description: ''
           required: true
