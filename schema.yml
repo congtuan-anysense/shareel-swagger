@@ -2321,13 +2321,14 @@ paths:
             type: string
             example: application/json
         - name: userID
-          in: path
+          in: query
           description: 'user_id'
           required: true
           style: simple
           schema:
-            type: string
-            example: 2
+            type: integer
+            format: int32
+            example: 19
       responses:
         '200': 
           description: Success
