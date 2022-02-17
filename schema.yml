@@ -10221,9 +10221,9 @@ paths:
     get:
       tags:
         - Schedule
-      summary: Schedule Details
-      description: "予約している情報を取得するAPI。利用時間に応じてチケットの使用枚数も自働算出される。<br> 使用枚数の算出は10分以下は繰上げになる。予約がされていて、その情報がDBに保存されていないと情報を取得することができない。"
+      summary: Schedule details
       operationId: ScheduleDetails
+      security: []
       parameters:
         - name: Accept
           in: header
@@ -10233,22 +10233,18 @@ paths:
           schema:
             type: string
             example: application/json
-      requestBody:
-        content:
-          application/x-www-form-urlencoded:
-            encoding: {}
-            schema:
-              required:
-                - id
-              type: object
-              properties:
-                id:
-                  type: number
-                  example: 56
-        required: false
+        - name: Accept
+          in: path
+          description: 'schedule id'
+          required: true
+          style: simple
+          schema:
+            type: number
+            example: 56
       responses:
         '200':
-          description: ''
+          description: OK
+          headers: {}
       deprecated: false
   /api/v1/hrm/client/schedule/{adviserID}/schedule/daily/search:
     post:
