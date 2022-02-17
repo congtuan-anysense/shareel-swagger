@@ -10223,7 +10223,6 @@ paths:
         - Schedule
       summary: Schedule details
       operationId: ScheduleDetails
-      security: []
       parameters:
         - name: Accept
           in: header
