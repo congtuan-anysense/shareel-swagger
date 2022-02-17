@@ -9336,7 +9336,7 @@ paths:
           headers: {}
       deprecated: false
   /api/v1/admin/payment-logs/{id}/coupon-expiration-date:
-    get:
+    put:
       tags:
           - PaymentLog
       summary: payment log status
