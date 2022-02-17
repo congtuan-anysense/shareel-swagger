@@ -6486,7 +6486,7 @@ paths:
                   id: 4
                   user_id: 22
                   name: Shihab
-                  dob: 1938-02-14
+                  dob: 1938/02/14
                   age: '20'
                   gender: male
                   is_receive_email_newsletter: false
@@ -6574,6 +6574,24 @@ paths:
                       name: ea
                       adviser_id: 4
       deprecated: false
+  /api/v1/admin/user/adviser/status/types:
+    get:
+      tags:
+        - User
+      summary: get types of status for adviser
+      parameters:
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+      responses:
+        '200':
+          description: ''
+          headers: {}
   /api/v1/admin/users/clients/list:
     get:
       tags:
