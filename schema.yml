@@ -2,9 +2,7 @@ openapi: 3.0.0
 info:
   title: Shareel HRM API
   contact: {}
-  #comment
   version: '1.0'
-  #NgoCongTuan comment test
 servers:
   - url: https://dev-api.upd.life
   - url: https://dev-admin-api.upd.life
