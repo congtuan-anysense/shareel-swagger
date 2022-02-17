@@ -6044,6 +6044,7 @@ paths:
           style: simple
           schema:
             type: string
+            example: '4'
         - name: Accept
           in: header
           description: ''
