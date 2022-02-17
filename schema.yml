@@ -8342,19 +8342,19 @@ paths:
                 publish_start_date:
                   type: string
                   description: 公開開始(日)
-                  example: 2021-10-17
+                  example: 2021/10/17
                 publish_start_time:
                   type: string
                   description: 公開開始(時)
-                  example: 12:02
+                  example: '12:02:01'
                 publish_end_date:
                   type: string
                   description: 公開終了(日)
-                  example: 2021-10-18
+                  example: 2021/10/18
                 publish_end_time:
                   type: string
                   description: 公開終了(時)
-                  example: 12:10
+                  example: '12:02:11'
         required: false
       responses:
         '200':
