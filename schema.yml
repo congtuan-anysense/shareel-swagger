@@ -8688,7 +8688,7 @@ paths:
                 publish_start_date:
                   type: string
                   description: 公開開始(日)
-                  example: 2021-10-17
+                  example: 2021/10/17
                 publish_start_time:
                   type: string
                   description: 公開開始(時)
@@ -8696,7 +8696,7 @@ paths:
                 publish_end_date:
                   type: string
                   description: 公開終了(日)
-                  example: 2021-10-18
+                  example: 2021/10/18
                 publish_end_time:
                   type: string
                   description: 公開終了(時)
