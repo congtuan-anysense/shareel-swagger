@@ -621,7 +621,7 @@ paths:
         '200':
           description: ''
           headers: {}
-  deprecated: false
+      deprecated: false
   # Start Auth Client
   /api/v1/hrm/auth/client/register:
     post:
@@ -2312,14 +2312,6 @@ paths:
       description: Get coupon history
       operationId: showusercouponhistory
       parameters:
-        - name: Accept
-          in: header
-          description: ''
-          required: true
-          style: simple
-          schema:
-            type: string
-            example: application/json
         - name: user_id
           in: query
           description: 'user id'
@@ -2329,6 +2321,14 @@ paths:
             type: integer
             format: int32
             example: 19
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
       responses:
         '200': 
           description: Success
@@ -10081,8 +10081,7 @@ paths:
       tags:
         - Schedule
       summary: Schedule Details
-      description: "予約している情報を取得するAPI。利用時間に応じてチケットの使用枚数も自働算出される。<br>
-      使用枚数の算出は10分以下は繰上げになる。予約がされていて、その情報がDBに保存されていないと情報を取得することができない。"
+      description: "予約している情報を取得するAPI。利用時間に応じてチケットの使用枚数も自働算出される。<br> 使用枚数の算出は10分以下は繰上げになる。予約がされていて、その情報がDBに保存されていないと情報を取得することができない。"
       operationId: ScheduleDetails
       parameters:
         - name: Accept
@@ -13433,6 +13432,33 @@ paths:
           description: ''
           headers: {}
       deprecated: false
+  /api/v1/admin/payment/{user_id}/history:
+    get:
+      tags: 
+        - Payment
+      summary: Get history of payment
+      description: "Get history of payment"
+      parameters:
+        - name: user_id
+          in: path
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: '4'
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+      responses:
+        '200':
+          description: ""
+          headers: {}
 components:
   schemas:
     ShowARatingQuestion:
