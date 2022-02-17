@@ -10232,13 +10232,14 @@ paths:
           schema:
             type: string
             example: application/json
-        - name: id.
+        - name: id
           in: path
           description: 'schedule id'
           required: true
           style: simple
           schema:
-            type: string
+            type: integer
+            format: int32
             example: 56
       responses:
         '200':
