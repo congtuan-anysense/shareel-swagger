@@ -13680,7 +13680,7 @@ paths:
   /api/v1/admin/transactions/export:
     post:
       tags:
-        - TRANSACTION
+        - Transaction
       summary: Export list transaction
       description: Export list transaction
       parameters:
@@ -13707,7 +13707,7 @@ paths:
                   items:
                     type: string
                     description: transaction id
-                  example: ['1']
+                    example: '1'
       responses:
         '200':
           description: ""
