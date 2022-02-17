@@ -10714,6 +10714,7 @@ paths:
         - Adviser
       summary: Get Advisers
       operationId: GetAdvisers
+      security: []
       parameters:
         - name: Accept
           in: header
@@ -11102,10 +11103,44 @@ paths:
                 - category_name
               type: object
               properties:
-                category_name:
+                date:
+                  type: string
+                  description: nullable|date
+                  example: 2022/02/17
+                age:
                   type: integer
                   description: nullable|string
                   format: int32
+                  example: 20
+                gender:
+                  type: string
+                  description: nullable|string (mail | female | others)
+                  example: male
+                category_name:
+                  type: string
+                  description: nullable|string
+                  example: 2
+                start_time:
+                  type: string
+                  description: nullable|string
+                  example: 2022/02/17
+                end_time:
+                  type: integer
+                  description: nullable|string
+                  format: int32
+                  example: 2022/02/17
+                prefecture:
+                  type: string
+                  description: nullable|string
+                  example: 2
+                personal_expertise_id:
+                  type: integer
+                  description: nullable|integer
+                  format: int32
+                  example: 2
+                adviser_certified_status:
+                  type: string
+                  description: nullable|string
                   example: 2
         required: false
       responses:
