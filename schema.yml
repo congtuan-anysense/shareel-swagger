@@ -13692,16 +13692,23 @@ paths:
           schema:
             type: string
             example: application/json
-        - name: ids
-          in: query
-          description: 'list transaction ids'
-          required: true
-          schema:
-            type: array
-            items: 
-              type: integer
-              format: int32
-            example: [1,2,3]
+      requestBody:
+        content:
+          application/json:
+            encoding: 
+              ids:
+                allowReserved: true
+            schema:
+              required:
+                - ids
+              type: object
+              properties:
+                ids:
+                  type: array
+                  description: list transation ids
+                  items:
+                    type: integer
+                  example: [1,2,3]
       responses:
         '200':
           description: ""
