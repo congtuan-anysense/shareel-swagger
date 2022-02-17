@@ -8411,11 +8411,12 @@ paths:
                   content: very important notice
                   target: client
                   type: private
-                  post_date: 2020/12/28
-                  post_time: 12:01
+                  post_date: "2021/10/17"
+                  post_time: "12:02:01"
                   created_by: 1
-                  updated_at: 2020-12-23T04:50:42Z
-                  created_at: 2020-12-23T04:50:42Z
+                  updated_at: "2022-02-17T02:43:41.000000Z",
+                  created_at: "2022-02-17T02:43:41.000000Z",
+                  client_url: "https://dev.upd.life/user/notice/112"
                   id: 11
       deprecated: false
     get:
