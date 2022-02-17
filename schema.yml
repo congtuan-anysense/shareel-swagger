@@ -9335,6 +9335,45 @@ paths:
           description: ''
           headers: {}
       deprecated: false
+  /api/v1/admin/payment-logs/{id}/coupon-expiration-date:
+    get:
+      tags:
+          - PaymentLog
+      summary: payment log status
+      parameters:
+        - name: id
+          in: path
+          description: 'id'
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            encoding: {}
+            schema:
+              required:
+                - expiry_date
+              type: object
+              properties:
+                expiry_date:
+                  type: string
+                  example: 2022/10/10
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
   /api/v1/admin/invite/user:
     post:
       tags:
