@@ -10248,63 +10248,7 @@ paths:
         required: false
       responses:
         '200':
-          description: '    {
-                            "message": "データの取得に成功しました！",
-                            "schedule": {
-                              "id": 1,
-                                "adviser_id": 9,
-                                        "available_date": "2021-07-31",
-                                "start_time": "15:00:00",
-                                "end_time": "15:22:00",
-                                "note": null,
-                                "status": true,
-                                "adviser": null
-                            },
-                            "number_of_coupons": 3
-                           }'
-          headers:
-            Host:
-              content:
-                text/plain:
-                  schema:
-                    type: string
-                  example: localhost:8000
-            Date:
-              content:
-                text/plain:
-                  schema:
-                    type: string
-                  example: Mon, 17 Aug 2020 10:46:57 GMT
-            Connection:
-              content:
-                text/plain:
-                  schema:
-                    type: string
-                  example: close
-            X-Powered-By:
-              content:
-                text/plain:
-                  schema:
-                    type: string
-                  example: PHP/7.3.11
-            Cache-Control:
-              content:
-                text/plain:
-                  schema:
-                    type: string
-                  example: no-cache, private
-            Access-Control-Allow-Origin:
-              content:
-                text/plain:
-                  schema:
-                    type: string
-                  example: '*'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Details1'
-              example:
-                message:
+          description: ''
       deprecated: false
   /api/v1/hrm/client/schedule/{adviserID}/schedule/daily/search:
     post:
