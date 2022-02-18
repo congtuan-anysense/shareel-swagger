@@ -450,6 +450,7 @@ paths:
         - Auth Adviser
       summary: Adviser Register
       operationId: AdviserRegister
+      security: []
       parameters:
         - name: Accept
           in: header
