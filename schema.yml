@@ -13222,6 +13222,26 @@ paths:
           description: ''
           headers: {}
       deprecated: false
+  /api/v1/hrm/chat/message/chat/room:
+    get:
+      tags:
+        - ChatMessageAPI
+      summary: Get message chat room
+      operationId: GetmessageChatRoom
+      parameters:
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
   /api/v1/hrm/chat/message/active/status:
     post:
       tags:
