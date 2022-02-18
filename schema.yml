@@ -13671,32 +13671,35 @@ paths:
           schema:
             type: string
             example: application/json
-      requestBody:
-        content:
-          application/json:
-            encoding: {}
-            schema:
-              type: object
-              properties:
-                paginate:
-                  type: integer
-                  format: int32
-                  example: 10
-                status:
-                  type: string
-                  enum: ['applying', 'paid']
-                  example: applying
-                free_search:
-                  type: string
-                  example: search
-                from_date:
-                  type: string
-                  description: format must be Y-m-d and must be before or equal to to_date param
-                  example: '2022-01-01'
-                to_date:
-                  type: string
-                  description: format must be Y-m-d and must be after or equal to from_date param
-                  example: '2022-02-02'
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+            format: int32
+            example: 10
+        - name: status
+          in: query
+          schema:
+            type: string
+            enum: ['applying', 'paid']
+            example: applying
+        - name: free_search
+          in: query
+          schema:
+            type: string
+            example: search
+        - name: from_date
+          in: query
+          schema:
+            type: string
+            description: format must be Y-m-d and must be before or equal to to_date param
+            example: '2022-01-01'
+        - name: to_date
+          in: query
+          schema:
+            type: string
+            description: format must be Y-m-d and must be after or equal to from_date param
+            example: '2022-02-02'
       responses:
         '200':
           description: ""
