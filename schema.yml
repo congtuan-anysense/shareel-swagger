@@ -13942,6 +13942,7 @@ paths:
                   description: format follow email
                   nullable: true
                   default: null
+                  example: null
                 name:
                   type: string
                   description: maximum is 50, minimum is 2
@@ -13951,16 +13952,19 @@ paths:
                   description: regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9.\-_]{8,16}$/\'
                   nullable: true
                   default: null
+                  example: null
                 type:
                   type: string
                   description: must be in a set (administrator, operator)
                   nullable: true
                   default: null
+                  example: null
                 active:
                   type: integer
                   enum: [0,1]
                   nullable: true
                   default: null
+                  example: null
       responses:
         '200':
           description: ""
