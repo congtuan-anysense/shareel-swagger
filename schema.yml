@@ -13903,7 +13903,7 @@ paths:
           schema:
             type: integer
             format: int32
-            example: 10
+            example: 1
       responses:
         '200':
           description: ""
