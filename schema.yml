@@ -169,7 +169,7 @@ paths:
                 password:
                   type: string
                   description: required
-                  example: passworD1
+                  example: 1Qaz2wsx
         required: false
       responses:
         '200':
@@ -13095,7 +13095,7 @@ paths:
         '200':
           description: ''
           headers: {}
-      deprecated: false
+      deprecated: true
     post:
       tags:
         - ChatMessageAPI
