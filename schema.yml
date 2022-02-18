@@ -13923,7 +13923,7 @@ paths:
           style: simple
           schema:
             type: string
-            example: application/x-www-form-urlencoded
+            example: application/json
         - name: id
           in: path
           required: true
@@ -13932,7 +13932,7 @@ paths:
             example: 316
       requestBody:
         content:
-          application/x-www-form-urlencoded:
+          application/json:
             encoding: {}
             schema:
               type: object
