@@ -490,6 +490,7 @@ paths:
                   example: shareel01
                 dob:
                   type: string
+                  format: date
                   description: nullable|date
                   example: 2019/12/18
                 terms_condition_acceptance:
@@ -497,6 +498,7 @@ paths:
                   example: true
                 adviser_identification_document:
                   type: string
+                  format: binary
                 bank_name:
                   type: string
                   description: nullable
