@@ -13909,6 +13909,7 @@ paths:
           description: ""
           headers: {}
       deprecated: false
+  /api/v1/admin/accounts/edit/{id}:
     put:
       tags:
         - Account
