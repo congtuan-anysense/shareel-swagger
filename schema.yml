@@ -6355,7 +6355,7 @@ paths:
           description: ''
           headers: {}
       deprecated: false
-  /api/v1/admin/user/adviser/{userID}/update/profile:
+  /api/v1/admin/user/adviser/{adviserId}/update/profile:
     put:
       tags:
         - User
