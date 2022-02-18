@@ -13928,18 +13928,12 @@ paths:
           required: true
           schema:
             type: integer
-            example: 1
+            example: 316
       requestBody:
         content:
           application/json:
             encoding: {}
             schema:
-              required:
-                - email
-                - name
-                - password
-                - type
-                - active
               type: object
               properties:
                 email:
