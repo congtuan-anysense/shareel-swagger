@@ -13903,7 +13903,65 @@ paths:
           schema:
             type: integer
             format: int32
+            example: 1f
+      responses:
+        '200':
+          description: ""
+          headers: {}
+      deprecated: false
+    put:
+      tags:
+        - Account
+      summary: Admin - update account
+      description: Admin - update account
+      parameters:
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
             example: 1
+      requestBody:
+        content:
+          application/json:
+            encoding: {}
+            schema:
+              required:
+                - email
+                - name
+                - password
+                - type
+                - active
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: format follow email
+                  example: example@email.com
+                name:
+                  type: string
+                  description: maximum is 50, minimum is 2
+                  example: example name
+                password:
+                  type: string
+                  description: regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9.\-_]{8,16}$/\'
+                  example: PasswordD1
+                type:
+                  type: string
+                  description: must be in a set (administrator, operator)
+                  example: administrator
+                active:
+                  type: integer
+                  enum: [0,1]
+                  example: 1
       responses:
         '200':
           description: ""
