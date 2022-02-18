@@ -13868,7 +13868,7 @@ paths:
                 password:
                   type: string
                   description: regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9.\-_]{8,16}$/\'
-                  example: password
+                  example: PasswordD1
                 type:
                   type: string
                   description: must be in a set (administrator, operator)
