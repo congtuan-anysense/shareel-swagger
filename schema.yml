@@ -5941,7 +5941,7 @@ paths:
           description: ''
           headers: {}
       deprecated: false
-    post:
+    put:
       tags:
         - Mail Template
       summary: Update a mail template
@@ -5970,14 +5970,10 @@ paths:
             encoding: {}
             schema:
               required:
-                - _method
                 - title
                 - content
               type: object
               properties:
-                _method:
-                  type: string
-                  example: PUT
                 title:
                   type: string
                   description: required|string|min:5
