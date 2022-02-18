@@ -13825,7 +13825,6 @@ paths:
           in: query
           schema:
             type: string
-            example: free_search
       responses:
         '200':
           description: ""
