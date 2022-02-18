@@ -13830,6 +13830,58 @@ paths:
           description: ""
           headers: {}
       deprecated: false
+    post:
+      tags:
+        - account
+      summary: Admin - create account
+      description: Admin - create account
+      parameters:
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+      requestBody:
+        content:
+          application/json:
+            encoding: {}
+            schema:
+              required:
+                - email
+                - name
+                - password
+                - type
+                - active
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: format follow email
+                  example: example@email.com
+                name:
+                  type: string
+                  description: maximum is 50, minimum is 2
+                  example: example name
+                password:
+                  type: string
+                  description: regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9.\-_]{8,16}$/\'
+                  example: password
+                type:
+                  type: string
+                  description: must be in a set (administrator, operator)
+                  example: administrator
+                active:
+                  type: integer
+                  enum: [0,1]
+                  example: 1
+      responses:
+        '200':
+          description: ""
+          headers: {}
+      deprecated: false
 components:
   schemas:
     ShowARatingQuestion:
