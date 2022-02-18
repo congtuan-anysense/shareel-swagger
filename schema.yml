@@ -6116,7 +6116,7 @@ paths:
                 nickname:
                   type: string
                   description: nullable | string | min:5 | max:30
-                  example: tes
+                  example: test_nickname
                 gender:
                   type: string
                   description: nullable
