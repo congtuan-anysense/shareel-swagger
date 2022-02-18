@@ -7645,7 +7645,7 @@ paths:
           schema:
             type: integer
             format: int32
-            example: 2
+            example: 11
         - name: Accept
           in: header
           description: ''
