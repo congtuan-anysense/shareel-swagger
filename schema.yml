@@ -13803,7 +13803,7 @@ paths:
   /api/v1/admin/accounts:
     get:
       tags:
-        - account
+        - Account
       summary: Admin - get list account
       description: Admin - get list account
       parameters:
@@ -13832,7 +13832,7 @@ paths:
       deprecated: false
     post:
       tags:
-        - account
+        - Account
       summary: Admin - create account
       description: Admin - create account
       parameters:
