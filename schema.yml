@@ -13800,6 +13800,37 @@ paths:
           description: ""
           headers: {}
       deprecated: false
+  /api/v1/admin/accounts:
+    get:
+      tags:
+        - account
+      summary: Admin - get list account
+      description: Admin - get list account
+      parameters:
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+        - name: paginate
+          in: query
+          schema:
+            type: integer
+            format: int32
+            example: 10
+        - name: free_search
+          in: query
+          schema:
+            type: string
+            example: free_search
+      responses:
+        '200':
+          description: ""
+          headers: {}
+      deprecated: false
 components:
   schemas:
     ShowARatingQuestion:
