@@ -494,7 +494,7 @@ paths:
                   description: nullable|date
                   example: 2019/12/18
                 terms_condition_acceptance:
-                  type: string
+                  type: boolean
                   example: true
                 adviser_identification_document:
                   type: string
