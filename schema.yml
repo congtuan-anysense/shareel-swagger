@@ -13736,7 +13736,7 @@ paths:
                   items:
                     type: integer
                     description: must be exists in the adviser_payouts table
-                  example: [1,2,3]
+                  example: [22,23,24]
       responses:
         '200':
           description: ""
