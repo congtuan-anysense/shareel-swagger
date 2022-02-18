@@ -13566,7 +13566,6 @@ paths:
       summary: Register User's card information
       operationId: paymentCreateCustomerCard
       description: "Validation"
-      security: []
       requestBody:
         content:
           application/x-www-form-urlencoded:
