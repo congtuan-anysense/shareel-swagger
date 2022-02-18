@@ -13223,7 +13223,7 @@ paths:
           headers: {}
       deprecated: false
   /api/v1/hrm/chat/message/chat/room:
-    get:
+    post:
       tags:
         - ChatMessageAPI
       summary: Get message chat room
@@ -13237,6 +13237,20 @@ paths:
           schema:
             type: string
             example: application/json
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            encoding: {}
+            schema:
+              required:
+                - to_user
+              type: object
+              properties:
+                to_user:
+                  type: integer
+                  format: int32
+                  example: 19
+        required: false
       responses:
         '200':
           description: ''
