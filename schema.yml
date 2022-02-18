@@ -13348,6 +13348,35 @@ paths:
           description: ''
           headers: {}
       deprecated: false
+  /api/v1/hrm/chat/message/can/{userID}/chat:
+    get:
+      tags:
+        - ChatMessageAPI
+      summary: user can chat with another
+      operationId: usercanchatwithanother
+      parameters:
+        - name: userID
+          in: path
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: integer
+            format: int32
+            example: 9
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
   /api/v1/hrm/expertises:
     get:
       tags:
@@ -13490,35 +13519,6 @@ paths:
                     deleted_at: ''
                     created_at: ''
                     updated_at: ''
-      deprecated: false
-  /api/v1/hrm/chat/message/can/{userID}/chat:
-    get:
-      tags:
-        - Misc
-      summary: user can chat with another
-      operationId: usercanchatwithanother
-      parameters:
-        - name: userID
-          in: path
-          description: ''
-          required: true
-          style: simple
-          schema:
-            type: integer
-            format: int32
-            example: 9
-        - name: Accept
-          in: header
-          description: ''
-          required: true
-          style: simple
-          schema:
-            type: string
-            example: application/json
-      responses:
-        '200':
-          description: ''
-          headers: {}
       deprecated: false
   /api/v1/hrm/adviser/report/income-by-month:
     get:
