@@ -13882,6 +13882,32 @@ paths:
           description: ""
           headers: {}
       deprecated: false
+  /api/v1/admin/accounts/{id}:
+    get:
+      tags:
+        - Account
+      summary: Admin - get specific account
+      description: Admin - get specific account
+      parameters:
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+        - name: id
+          in: path
+          schema:
+            type: integer
+            format: int32
+            example: 10
+      responses:
+        '200':
+          description: ""
+          headers: {}
+      deprecated: false
 components:
   schemas:
     ShowARatingQuestion:
