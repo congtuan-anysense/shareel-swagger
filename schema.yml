@@ -3,6 +3,7 @@ info:
   title: Shareel HRM API
   contact: {}
   version: '1.0'
+  # test
 servers:
   - url: https://dev-api.upd.life
   - url: https://dev-admin-api.upd.life
@@ -13422,7 +13423,6 @@ paths:
       summary: Register User's card information
       operationId: paymentCreateCustomerCard
       description: "Validation"
-      security: []
       requestBody:
         content:
           application/x-www-form-urlencoded:
