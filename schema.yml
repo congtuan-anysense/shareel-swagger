@@ -6122,9 +6122,9 @@ paths:
                   description: nullable
                   example: female
                 dob:
-                  type: date
+                  type: string
                   description: date_format:Y-m-d
-                  example: 2021-02-01
+                  example: '2021-02-01'
                 email:
                   type: string
                   description: email|unique
