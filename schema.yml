@@ -7636,7 +7636,7 @@ paths:
           explode: true
           schema:
             type: string
-            example: 2020-11-24
+            example: '2020-11-24'
         - name: messageID
           in: path
           description: ''
