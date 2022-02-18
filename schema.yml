@@ -5796,6 +5796,7 @@ paths:
           explode: true
           schema:
             type: string
+            example: desc
         - name: Accept
           in: header
           description: ''
