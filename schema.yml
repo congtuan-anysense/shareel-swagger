@@ -13940,6 +13940,8 @@ paths:
                 email:
                   type: string
                   description: format follow email
+                  nullable: true
+                  default: null
                 name:
                   type: string
                   description: maximum is 50, minimum is 2
@@ -13947,12 +13949,18 @@ paths:
                 password:
                   type: string
                   description: regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9.\-_]{8,16}$/\'
+                  nullable: true
+                  default: null
                 type:
                   type: string
                   description: must be in a set (administrator, operator)
+                  nullable: true
+                  default: null
                 active:
                   type: integer
                   enum: [0,1]
+                  nullable: true
+                  default: null
       responses:
         '200':
           description: ""
