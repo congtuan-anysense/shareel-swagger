@@ -8610,7 +8610,7 @@ paths:
                   created_at: 2020-11-15T04:33:26Z
                   updated_at: 2020-11-15T04:33:26Z
       deprecated: false
-    post:
+    put:
       tags:
         - Notice
       summary: Update a notice
@@ -8639,16 +8639,12 @@ paths:
             encoding: {}
             schema:
               required:
-                - _method
                 - message
                 - target
                 - content
                 - type
               type: object
               properties:
-                _method:
-                  type: string
-                  example: POST
                 message:
                   type: string
                   description: タイトル
