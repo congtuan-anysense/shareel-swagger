@@ -646,18 +646,6 @@ paths:
           schema:
             type: string
             format: binary
-      # requestBody:
-      #   content:
-      #     application/x-www-form-urlencoded:
-      #       encoding: {}
-      #       schema:
-      #         required:
-      #           - file
-      #         properties:
-      #           file:
-      #             type: string
-      #             format: base64
-      #   required: false
       responses:
         '200':
           description: ''
