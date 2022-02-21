@@ -648,7 +648,7 @@ paths:
                 - file
               type: object
               properties:
-                email:
+                file:
                   type: string
                   format: binary
         required: false
