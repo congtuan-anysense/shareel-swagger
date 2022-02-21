@@ -640,7 +640,7 @@ paths:
             type: string
             example: application/json
         - name: file
-          in: path
+          in: header
           required: true
           style: simple
           schema:
