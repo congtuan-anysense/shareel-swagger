@@ -9639,7 +9639,7 @@ paths:
                 available_date:
                   type: string
                   description: required
-                  example: '2021-10-20'
+                  example: '2022-10-20'
                 start_time:
                   type: string
                   description: required|required|date_format:H:i
