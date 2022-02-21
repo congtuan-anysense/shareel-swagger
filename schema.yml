@@ -9602,7 +9602,7 @@ paths:
               properties:
                 date:
                   type: string
-                  example: 2020-08-30
+                  example: '2020-08-30'
         required: false
       responses:
         '200':
