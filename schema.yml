@@ -8898,7 +8898,6 @@ paths:
         - Notice
       summary: All Notice
       operationId: AllNotice
-      security: []
       parameters:
         - name: Accept
           in: header
