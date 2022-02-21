@@ -277,7 +277,7 @@ paths:
                   example: PUT
                 email:
                   type: string
-                  example: shareel+client2@gmail.com
+                  example: shareel+adviser+123@gmail.com
         required: false
       responses:
         '200':
