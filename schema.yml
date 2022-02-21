@@ -3058,7 +3058,7 @@ paths:
           schema:
             type: integer
             format: int32
-            example: 1
+            example: 17
         - name: Accept
           in: header
           description: ''
