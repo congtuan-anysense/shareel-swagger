@@ -3117,6 +3117,52 @@ paths:
           description: ''
           headers: {}
       deprecated: false
+  /api/v1/hrm/adviser/consultation/booked/{id}/update:
+    post: 
+      tags:
+        - Consultation
+      summary: Update specific booked consultation.
+      parameters:
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: number
+            description: consultation id
+            example: 1
+      requestBody:
+        content:
+          application/json:
+            encoding: {}
+            schema:
+              required: 
+                - consultation_url
+              type: object
+              properties:
+                consultation_url:
+                  type: string
+                  example: 'https://us04web.zoom.us/j/71209066587?pwd=MTBaRDZXZVkvTnlxaUY2dzN1Vk5sZz09'
+                consultation_content:
+                  type: string
+                  example: consultation content
+                other_requests:
+                  type: string
+                  example: other request test value
+                zoom_id:
+                  type: string
+                  example: Ldvoy4fXS8+GOV8XTXTuPA==
+      responses:
+        '200':
+          description: ''
+          headers: {}     
   /api/v1/hrm/adviser/consultation/booked/user/unique/list:
     get:
       tags:
