@@ -11455,7 +11455,7 @@ paths:
                 consultation_id:
                   type: integer
                   format: int32
-                  example: 1
+                  example: 10
                 topic:
                   type: string
                   example: test topic 1
