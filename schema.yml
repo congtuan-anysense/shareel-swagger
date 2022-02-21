@@ -641,16 +641,13 @@ paths:
             example: application/json
       requestBody:
         content:
-          application/x-www-form-urlencoded:
-            encoding: {}
+          multipart/form-data:
             schema:
-              required:
-                - file
+              type: object
               properties:
                 file:
                   type: string
-                  format: byte
-        required: false
+                  format: binary
       responses:
         '200':
           description: ''
