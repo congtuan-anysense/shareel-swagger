@@ -10055,7 +10055,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/delete'
               example:
-                message: Deleted successfully
+                message: スケジュールはコンサルテーションに属しています！
       deprecated: false
   /api/v1/hrm/client/schedule/{id}/details:
     get:
