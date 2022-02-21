@@ -3137,7 +3137,7 @@ paths:
           schema:
             type: number
             description: consultation id
-            example: 1
+            example: 47
       requestBody:
         content:
           application/x-www-form-urlencoded:
