@@ -11586,6 +11586,43 @@ paths:
           description: ''
           headers: {}
       deprecated: false
+  /api/v1/hrm/zoom/adviser/profile/credentials/update:
+    post:
+      tags:
+        - Zoom
+      summary: Update adviser credentials
+      operationId: UpdateAdviserCredentials
+      parameters:
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            encoding: {}
+            schema:
+              required:
+                - api_key
+                - secret_key
+              type: object
+              properties:
+                api_key:
+                  type: string
+                  example: 'PqqvV7ICRUW0pz5DPOxNvA'
+                secret_key:
+                  type: string
+                  example: 'f695TdSGPEpJVF0pJsNiUyS2sYhG6YXPy9Zj'
+        required: false
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
   /api/v1/hrm/client/favourite/adviser/{adviserId}:
     post:
       tags:
