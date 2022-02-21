@@ -639,18 +639,25 @@ paths:
           schema:
             type: string
             example: application/json
-      requestBody:
-        content:
-          application/x-www-form-urlencoded:
-            encoding: {}
-            schema:
-              required:
-                - file
-              properties:
-                file:
-                  type: string
-                  format: base64
-        required: false
+        - name: file
+          in: path
+          required: true
+          style: simple
+          schema:
+            type: string
+            format: binary
+      # requestBody:
+      #   content:
+      #     application/x-www-form-urlencoded:
+      #       encoding: {}
+      #       schema:
+      #         required:
+      #           - file
+      #         properties:
+      #           file:
+      #             type: string
+      #             format: base64
+      #   required: false
       responses:
         '200':
           description: ''
