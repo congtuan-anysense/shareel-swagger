@@ -572,7 +572,7 @@ paths:
     post:
       tags:
         - Auth Adviser
-      summary: Auth Adviser Check info Adviser step 2
+      summary: Auth Adviser Check info Adviser step 1
       operationId: uniqueEmailCheck
       security: []
       parameters:
@@ -617,6 +617,40 @@ paths:
                   type: number
                   example: 1
                   description: 0 = no | 1 = yes
+        required: false
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /api/v1/hrm/auth/image/verify:
+    post:
+      tags:
+        - Auth Adviser
+      summary: Auth Adviser Check Image Adviser step 2
+      operationId: imageVerify
+      security: []
+      parameters:
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            encoding: {}
+            schema:
+              required:
+                - file
+              type: object
+              properties:
+                email:
+                  type: string
+                  format: binary
         required: false
       responses:
         '200':
