@@ -9639,15 +9639,15 @@ paths:
                 available_date:
                   type: string
                   description: required
-                  example: 2021-10-20
+                  example: '2021-10-20'
                 start_time:
                   type: string
                   description: required|required|date_format:H:i
-                  example: 17:00
+                  example: '17:00'
                 end_time:
                   type: string
                   description: required|date_format:H:i|after:start_time
-                  example: 17:30
+                  example: '17:30'
                 note:
                   type: string
                   example: Test note
