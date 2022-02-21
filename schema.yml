@@ -8827,57 +8827,8 @@ paths:
             example: application/json
       responses:
         '200':
-          description: OK
-          headers:
-            Host:
-              content:
-                text/plain:
-                  schema:
-                    type: string
-                  example: localhost:8000
-            Date:
-              content:
-                text/plain:
-                  schema:
-                    type: string
-                  example: Mon, 28 Sep 2020 06:30:56 GMT
-            Connection:
-              content:
-                text/plain:
-                  schema:
-                    type: string
-                  example: close
-            X-Powered-By:
-              content:
-                text/plain:
-                  schema:
-                    type: string
-                  example: PHP/7.3.11
-            Cache-Control:
-              content:
-                text/plain:
-                  schema:
-                    type: string
-                  example: no-cache, private
-            Access-Control-Allow-Origin:
-              content:
-                text/plain:
-                  schema:
-                    type: string
-                  example: '*'
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/GETAllNotices'
-              example:
-                message: Success!
-                notices:
-                  id: 2
-                  notice_date: 2020-09-27
-                  message: Harum veniam omnis quo delectus itaque id.
-                  deleted_at: ''
-                  created_at: 2020-09-27T07:55:44Z
-                  updated_at: 2020-09-27T07:55:44Z
+          description: ''
+          headers: {}
       deprecated: false
   /api/v1/hrm/notices/{noticeID}:
     get:
