@@ -3130,7 +3130,7 @@ paths:
           style: simple
           schema:
             type: string
-            example: application/json
+            example: application/x-www-form-urlencoded
         - name: id
           in: path
           required: true
@@ -3140,7 +3140,7 @@ paths:
             example: 1
       requestBody:
         content:
-          application/json:
+          application/x-www-form-urlencoded:
             encoding: {}
             schema:
               required: 
