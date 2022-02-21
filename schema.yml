@@ -3158,7 +3158,7 @@ paths:
                   example: other request test value
                 zoom_id:
                   type: string
-                  example: Ldvoy4fXS8+GOV8XTXTuPA==
+                  example: 1
       responses:
         '200':
           description: ''
