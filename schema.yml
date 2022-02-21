@@ -649,7 +649,7 @@ paths:
               properties:
                 file:
                   type: string
-                  format: byte
+                  format: base64
         required: false
       responses:
         '200':
