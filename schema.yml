@@ -2893,6 +2893,13 @@ paths:
           schema:
             type: string
             example: application/json
+        - name: page
+          in: query
+          description: 'pagination param'
+          schema:
+            type: number
+            nullable: true
+            default: 1
       responses:
         '200':
           description: ''
