@@ -646,11 +646,10 @@ paths:
             schema:
               required:
                 - file
-              type: object
               properties:
                 file:
                   type: string
-                  format: binary
+                  format: byte
         required: false
       responses:
         '200':
