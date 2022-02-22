@@ -166,11 +166,11 @@ paths:
                 email:
                   type: string
                   description: required|email
-                  example: ai+adviser@anysense.co.jp
+                  example: ''
                 password:
                   type: string
                   description: required
-                  example: 1Qaz2wsx
+                  example: ''
         required: false
       responses:
         '200':
