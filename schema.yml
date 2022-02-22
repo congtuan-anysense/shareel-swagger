@@ -13642,6 +13642,18 @@ paths:
           description: ''
           headers: {}
       deprecated: false
+  /api/v1/hrm/client/payment/customer-card:
+    get:
+      tags:
+        - Payment
+      summary: get info card user
+      operationId: getInfoCardUser
+      description: "Validation"
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
   /api/v1/admin/payment/{user_id}/history:
     get:
       tags: 
