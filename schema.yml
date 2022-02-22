@@ -6466,6 +6466,10 @@ paths:
                   type: string
                   enum: ['approved','not_approved','unconfirmed']
                   example: 'unconfirmed'
+                certified_badge_status:
+                  type: string
+                  enum: ['yes', 'no']
+                  example: 'yes'
         required: false
       responses:
         '200':
