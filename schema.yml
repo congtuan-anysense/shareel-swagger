@@ -460,12 +460,6 @@ paths:
           schema:
             type: string
             example: application/json
-        # - name: terms_condition_acceptance
-        #   in: query
-        #   required: true
-        #   schema:
-        #     type: boolean
-        #     example: true
       requestBody:
         content:
           multipart/form-data:
@@ -499,6 +493,11 @@ paths:
                   format: date
                   description: nullable|date
                   example: 2019/12/18
+                terms_condition_acceptance:
+                  type: number
+                  enum: [0,1]
+                  example: 1
+                  description: Value of this field must be boolean type, it can be true or false value
                 adviser_identification_document:
                   type: string
                   format: binary
@@ -522,16 +521,7 @@ paths:
                   type: string
                   description: required_with:branch_number|string|max:255
                   example: 'Branch Name'
-          application/json:
-            encoding: {}
-            schema:
-              required:
-                - terms_condition_acceptance
-              type: object
-              properties:
-                terms_condition_acceptance:
-                  type: boolean
-                  example: true
+        required: false
       responses:
         '201':
           description: Created
