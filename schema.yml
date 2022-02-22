@@ -359,6 +359,19 @@ paths:
         '200':
           description: ''
           headers: {}
+        '400':
+          description: There are reservations left
+          headers: {}
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+              example:
+                message: 予約が残っています！
+                
       deprecated: false
   /api/v1/hrm/auth/adviser/password/email:
     post:
