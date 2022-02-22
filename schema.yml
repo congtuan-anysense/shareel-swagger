@@ -10755,7 +10755,7 @@ paths:
                   type: array
                   items:
                     type: string
-                  example: ['category name text']
+                  example: ['夫婦関係']
                 feature_name:
                   type: array
                   items:
