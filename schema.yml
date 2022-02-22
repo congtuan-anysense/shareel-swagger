@@ -277,7 +277,7 @@ paths:
                   example: PUT
                 email:
                   type: string
-                  example: shareel+adviser+123@gmail.com
+                  example: shareel+client2@gmail.com
         required: false
       responses:
         '200':
@@ -479,7 +479,7 @@ paths:
             example: application/json
       requestBody:
         content:
-          multipart/form-data:
+          application/x-www-form-urlencoded:
             encoding: {}
             schema:
               required:
@@ -488,6 +488,7 @@ paths:
                 - password_confirmation
                 - name
                 - dob
+                - terms_condition_acceptance
                 - adviser_identification_document
               type: object
               properties:
@@ -511,10 +512,8 @@ paths:
                   description: nullable|date
                   example: 2019/12/18
                 terms_condition_acceptance:
-                  type: number
-                  enum: [0,1]
-                  example: 1
-                  description: Value of this field must be boolean type, it can be true or false value
+                  type: boolean
+                  example: true
                 adviser_identification_document:
                   type: string
                   format: binary
@@ -590,7 +589,7 @@ paths:
     post:
       tags:
         - Auth Adviser
-      summary: Auth Adviser Check info Adviser step 1
+      summary: Auth Adviser Check info Adviser step 2
       operationId: uniqueEmailCheck
       security: []
       parameters:
@@ -636,36 +635,6 @@ paths:
                   example: 1
                   description: 0 = no | 1 = yes
         required: false
-      responses:
-        '200':
-          description: ''
-          headers: {}
-      deprecated: false
-  /api/v1/hrm/auth/image/verify:
-    post:
-      tags:
-        - Auth Adviser
-      summary: Auth Adviser Check Image Adviser step 2
-      operationId: imageVerify
-      security: []
-      parameters:
-        - name: Accept
-          in: header
-          description: ''
-          required: true
-          style: simple
-          schema:
-            type: string
-            example: application/json
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                file:
-                  type: string
-                  format: binary
       responses:
         '200':
           description: ''
@@ -2243,27 +2212,6 @@ paths:
           description: ''
           headers: {}
       deprecated: false
-  /api/v1/hrm/adviser/bank/info:
-    get:
-      tags:
-        - Bank
-      summary: Get bank info for adviser
-      description: "Get bank info for adviser"
-      operationId: GetallBankInforAdviser
-      parameters:
-        - name: Accept
-          in: header
-          description: ''
-          required: true
-          style: simple
-          schema:
-            type: string
-            example: application/json
-      responses:
-        '200':
-          description: ''
-          headers: {}
-      deprecated: false
   /api/v1/hrm/client/coupons/create:
     post:
       tags:
@@ -2932,13 +2880,6 @@ paths:
           schema:
             type: string
             example: application/json
-        - name: page
-          in: query
-          description: 'pagination param'
-          schema:
-            type: number
-            nullable: true
-            default: 1
       responses:
         '200':
           description: ''
@@ -3100,7 +3041,7 @@ paths:
           schema:
             type: integer
             format: int32
-            example: 17
+            example: 1
         - name: Accept
           in: header
           description: ''
@@ -3156,52 +3097,6 @@ paths:
           description: ''
           headers: {}
       deprecated: false
-  /api/v1/hrm/adviser/consultation/booked/{id}/update:
-    post: 
-      tags:
-        - Consultation
-      summary: Update specific booked consultation.
-      parameters:
-        - name: Accept
-          in: header
-          description: ''
-          required: true
-          style: simple
-          schema:
-            type: string
-            example: application/x-www-form-urlencoded
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: number
-            description: consultation id
-            example: 47
-      requestBody:
-        content:
-          application/x-www-form-urlencoded:
-            encoding: {}
-            schema:
-              required: 
-                - consultation_url
-              type: object
-              properties:
-                consultation_url:
-                  type: string
-                  example: 'https://us04web.zoom.us/j/71209066587?pwd=MTBaRDZXZVkvTnlxaUY2dzN1Vk5sZz09'
-                consultation_content:
-                  type: string
-                  example: consultation content
-                other_requests:
-                  type: string
-                  example: other request test value
-                zoom_id:
-                  type: string
-                  example: 1
-      responses:
-        '200':
-          description: ''
-          headers: {}     
   /api/v1/hrm/adviser/consultation/booked/user/unique/list:
     get:
       tags:
@@ -6238,15 +6133,15 @@ paths:
                 nickname:
                   type: string
                   description: nullable | string | min:5 | max:30
-                  example: test_nickname
+                  example: tes
                 gender:
                   type: string
                   description: nullable
                   example: female
                 dob:
-                  type: string
+                  type: date
                   description: date_format:Y-m-d
-                  example: '2021-02-01'
+                  example: 2021-02-01
                 email:
                   type: string
                   description: email|unique
@@ -6502,67 +6397,210 @@ paths:
           schema:
             type: string
             example: application/json
-        - name: name
-          in: query
-          required: true
-          schema:
-            type: string
-            description: nullable|string|min:5|max:30
-            example: name-swagger
-        - name: carrier
-          in: query
-          schema:
-            type: string
-            nullable: true
-            default: null
-        - name: qualification
-          in: query
-          schema:
-            type: string
-            description: nullable|string|max:255
-            nullable: true
-            default: null
-        - name: hobby
-          in: query
-          schema:
-            type: string
-            nullable: true
-            default: null
-        - name: video_link
-          in: query
-          schema: 
-            type: string
-            nullable: true
-            default: null
-        - name: prefecture
-          in: query
-          schema:
-            type: string
-            nullable: true
-            default: null
-        - name: gender
-          in: query
-          schema:
-            type: string
-            enum: ['male', 'female']
-            nullable: true
-            default: null
-        - name: email
-          in: query
-          schema:
-            type: string
-            nullable: true
-            default: null
-        - name: identification_status
-          in: query
-          schema:
-            type: string
-            nullable: true
-            default: null
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            encoding: {}
+            schema:
+              required:
+                - name
+                - carrier
+                - qualification
+                - hobby
+                - _method
+                - video_link
+                - prefecture
+                - gender
+                - email
+                - fee
+                - birthday
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: nullable|string|min:5|max:30
+                  example: name-swagger
+                carrier:
+                  type: string
+                  description: nullable|string|max:255
+                  example: advisor
+                qualification:
+                  type: string
+                  description: nullable|string|max:255
+                  example: ok
+                hobby:
+                  type: string
+                  description: nullable|string|max:255
+                  example: ok
+                _method:
+                  type: string
+                  example: PUT
+                video_link:
+                  type: string
+                  description: nullable|string
+                  example: https://youtu.be/2OEL4P1Rz04
+                prefecture:
+                  type: string
+                  description: sometimes|string|min:5
+                  example: tokyo
+                gender:
+                  type: string
+                  description: nullable|string|max:255
+                  example: male
+                email:
+                  type: string
+                  description: required|email|unique:users,email,' . $adviser-&gt;user_id . '|max:255
+                  example: tanvir+123@gmail.com
+                fee:
+                  type: integer
+                  description: nullable|string|max:255
+                  format: int32
+                  example: 10
+                birthday:
+                  type: string
+                  description: nullable|date|date_format:Y/m/d  -&gt; dob instead of age
+                  example: 2021/02/21
+                identification_status:
+                  type: string
+                  example: unconfirmed
+        required: false
       responses:
         '200':
-          description: ''
-          headers: {}
+          description: OK
+          headers:
+            Host:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: localhost:8003
+            Date:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Sun, 14 Feb 2021 11:28:07 GMT
+            Connection:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: close
+            X-Powered-By:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: PHP/7.4.10
+            Cache-Control:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: no-cache, private
+            Access-Control-Allow-Origin:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '*'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/updateadviserprofile'
+              example:
+                message: Successfully updated
+                adviser:
+                  id: 4
+                  user_id: 22
+                  name: Shihab
+                  dob: 1938/02/14
+                  age: '20'
+                  gender: male
+                  is_receive_email_newsletter: false
+                  bank_id: ''
+                  account_number: ''
+                  account_name: ''
+                  account_type: ''
+                  branch_number: ''
+                  branch_name: ''
+                  evaluation: Dignissimos ut libero ut minus.
+                  tag: '4'
+                  fee: ''
+                  bookable: true
+                  consultation: Qui rerum quaerat a. At voluptas consequatur ut vel. Voluptatem qui et error ut.
+                  carrier: advisor
+                  hobby: ok
+                  message: Nesciunt tempora ipsa sit beatae distinctio. Laboriosam atque veritatis ea velit aut. Vel beatae sint id occaecati. Et quis saepe quibusdam autem unde.
+                  video_link: https://youtu.be/2OEL4P1Rz04
+                  prefecture: "å\x9F¼ç\x8E\x89"
+                  upload_id: 1
+                  adviser_identity_verification_document_upload_id: 1
+                  review_image_id: 2
+                  consulatation_image_id: 3
+                  personal_expertise_id: 4
+                  adviser_category_id: 1
+                  created_by: 1
+                  updated_by: 1
+                  deleted_by: ''
+                  deleted_at: ''
+                  created_at: 2021-02-14T09:13:12Z
+                  updated_at: 2021-02-14T11:28:07Z
+                  user:
+                    id: 22
+                    email: jrobel@streich.com
+                    email_verification_token: ''
+                    email_verified_at: ''
+                    active: true
+                    role_id: 2
+                    membership_id: ''
+                    sharing_service_id: 1
+                    closed_reason: ''
+                    created_by: ''
+                    updated_by: ''
+                    deleted_by: ''
+                    created_at: 2021-02-14T09:13:11Z
+                    updated_at: 2021-02-14T09:13:11Z
+                    deleted_at: ''
+                  upload:
+                    id: 1
+                    path: storage/static/user/user_avatar.png
+                    type: profile_image
+                    created_at: 2021-02-14T09:13:08Z
+                    updated_at: 2021-02-14T09:13:08Z
+                  category:
+                    - id: 7
+                      name: possimus
+                      adviser_id: 4
+                    - id: 8
+                      name: qui
+                      adviser_id: 4
+                    - id: 23
+                      name: possimus
+                      adviser_id: 4
+                    - id: 24
+                      name: possimus
+                      adviser_id: 4
+                  qualification:
+                    - id: 7
+                      name: tenetur
+                      adviser_id: 4
+                    - id: 8
+                      name: voluptas
+                      adviser_id: 4
+                    - id: 23
+                      name: quis
+                      adviser_id: 4
+                    - id: 24
+                      name: quis
+                      adviser_id: 4
+                  feature:
+                    - id: 7
+                      name: quis
+                      adviser_id: 4
+                    - id: 8
+                      name: ea
+                      adviser_id: 4
       deprecated: false
   /api/v1/admin/user/adviser/status/types:
     get:
@@ -8732,7 +8770,7 @@ paths:
                   created_at: 2020-11-15T04:33:26Z
                   updated_at: 2020-11-15T04:33:26Z
       deprecated: false
-    put:
+    post:
       tags:
         - Notice
       summary: Update a notice
@@ -8746,7 +8784,7 @@ paths:
           schema:
             type: integer
             format: int32
-            example: 111
+            example: 13
         - name: Accept
           in: header
           description: ''
@@ -8761,12 +8799,16 @@ paths:
             encoding: {}
             schema:
               required:
+                - _method
                 - message
                 - target
                 - content
                 - type
               type: object
               properties:
+                _method:
+                  type: string
+                  example: POST
                 message:
                   type: string
                   description: タイトル
@@ -8949,8 +8991,57 @@ paths:
             example: application/json
       responses:
         '200':
-          description: ''
-          headers: {}
+          description: OK
+          headers:
+            Host:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: localhost:8000
+            Date:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Mon, 28 Sep 2020 06:30:56 GMT
+            Connection:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: close
+            X-Powered-By:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: PHP/7.3.11
+            Cache-Control:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: no-cache, private
+            Access-Control-Allow-Origin:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '*'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GETAllNotices'
+              example:
+                message: Success!
+                notices:
+                  id: 2
+                  notice_date: 2020-09-27
+                  message: Harum veniam omnis quo delectus itaque id.
+                  deleted_at: ''
+                  created_at: 2020-09-27T07:55:44Z
+                  updated_at: 2020-09-27T07:55:44Z
       deprecated: false
   /api/v1/hrm/notices/{noticeID}:
     get:
@@ -9046,7 +9137,7 @@ paths:
           schema:
             type: integer
             format: int32
-            example: 112
+            example: 2
         - name: Accept
           in: header
           description: ''
@@ -9694,12 +9785,100 @@ paths:
               properties:
                 date:
                   type: string
-                  example: '2020-08-30'
+                  example: 2020-08-30
         required: false
       responses:
         '200':
-          description: ''
-          headers: {}
+          description: OK
+          headers:
+            Host:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: localhost:8000
+            Date:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Mon, 17 Aug 2020 10:52:08 GMT
+            Connection:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: close
+            X-Powered-By:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: PHP/7.3.11
+            Cache-Control:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: no-cache, private
+            Access-Control-Allow-Origin:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '*'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/getallscheules'
+              example:
+                message: Successfully retrieved data!
+                schedules:
+                  - id: 2
+                    advisor_id: 12
+                    available_date: 2020-08-17
+                    start_time: 12:00:00
+                    end_time: 13:00:00
+                    advisor:
+                      id: 12
+                      user_id: 44
+                      first_name: hello
+                      last_name: world
+                      age: '30'
+                      gender: male
+                      category: d
+                      evaluation: ''
+                      tag: ''
+                      fee: ''
+                      bookable: true
+                      upload_id: ''
+                      created_by: ''
+                      updated_by: ''
+                      deleted_by: ''
+                      deleted_at: ''
+                      created_at: 2020-08-06T06:41:38Z
+                      updated_at: 2020-08-06T06:41:38Z
+                      consultation: ''
+                      carrier: ''
+                      qualification: ''
+                      hobby: ''
+                      feature: ''
+                      message: Hello, Welcome to my profile
+                      user:
+                        id: 44
+                        username: rasel_advisor
+                        email: rasel@advisor.com
+                        email_verified_at: ''
+                        created_by: ''
+                        updated_by: ''
+                        deleted_by: ''
+                        created_at: 2020-08-06T06:41:38Z
+                        updated_at: 2020-08-06T06:41:38Z
+                        deleted_at: ''
+                        role_id: 3
+                        sharing_service_id: 1
+                        active: true
+                        membership_id: 1
       deprecated: false
   /api/v1/hrm/adviser/schedule/create:
     post:
@@ -9731,15 +9910,15 @@ paths:
                 available_date:
                   type: string
                   description: required
-                  example: '2022-10-20'
+                  example: 2021-10-20
                 start_time:
                   type: string
                   description: required|required|date_format:H:i
-                  example: '17:00'
+                  example: 17:00
                 end_time:
                   type: string
                   description: required|date_format:H:i|after:start_time
-                  example: '17:30'
+                  example: 17:30
                 note:
                   type: string
                   example: Test note
@@ -9765,7 +9944,7 @@ paths:
           schema:
             type: integer
             format: int32
-            example: 10
+            example: 2
         - name: Accept
           in: header
           description: ''
@@ -9972,7 +10151,7 @@ paths:
                       membership_id: 1
       deprecated: false
   /api/v1/hrm/adviser/schedule/{id}/delete:
-    delete:
+    post:
       tags:
         - Schedule
       summary: delete
@@ -9995,6 +10174,19 @@ paths:
           schema:
             type: string
             example: application/json
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            encoding: {}
+            schema:
+              required:
+                - _method
+              type: object
+              properties:
+                _method:
+                  type: string
+                  example: DELETE
+        required: false
       responses:
         '200':
           description: OK
@@ -10040,7 +10232,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/delete'
               example:
-                message: スケジュールはコンサルテーションに属しています！
+                message: Deleted successfully
       deprecated: false
   /api/v1/hrm/client/schedule/{id}/details:
     get:
@@ -10661,8 +10853,102 @@ paths:
             example: application/json
       responses:
         '200':
-          description: ''
-          headers: {}
+          description: OK
+          headers:
+            Host:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: localhost:8000
+            Date:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Sun, 06 Sep 2020 06:34:01 GMT
+            Connection:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: close
+            X-Powered-By:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: PHP/7.3.11
+            Cache-Control:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: no-cache, private
+            Access-Control-Allow-Origin:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '*'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GETSingleAdvisorprofile'
+              example:
+                message: Successfully retrieved data!
+                advisor:
+                  id: 11
+                  first_name: shihab
+                  last_name: ''
+                  gender: male
+                  dob: 1992-01-02
+                  age: '23'
+                  category: f
+                  evaluation: ''
+                  tag: ''
+                  fee: ''
+                  bookable: true
+                  consultation: advisor
+                  carrier: advisor
+                  qualification: ok
+                  hobby: ok
+                  feature: ok
+                  message: hello users
+                  user:
+                    id: 35
+                    username: edna.bartell
+                    email: rasel@advisor.com
+                    email_verification_token: ''
+                    email_verified_at: ''
+                    created_by: ''
+                    updated_by: ''
+                    deleted_by: ''
+                    created_at: 2020-08-20T04:37:47Z
+                    updated_at: 2020-08-20T04:37:47Z
+                    deleted_at: ''
+                    role_id: 3
+                    sharing_service_id: 1
+                    active: true
+                  upload:
+                    id: 1
+                    path: uploads/images/advisor/1598156675.jpg
+                    type: image
+                    created_at: 2020-08-23T04:24:35Z
+                    updated_at: 2020-08-23T04:24:35Z
+                  schedule:
+                    id: 3
+                    advisor_id: 11
+                    available_date: 2020-08-27
+                    start_time: 15:00:00
+                    end_time: 17:00:00
+                    status: false
+                    created_by: 35
+                    updated_by: ''
+                    deleted_by: ''
+                    deleted_at: ''
+                    created_at: 2020-08-26T05:20:25Z
+                    updated_at: 2020-08-26T05:20:25Z
       deprecated: false
   /api/v1/hrm/adviser/update/transfer/account:
     put:
@@ -10716,7 +11002,7 @@ paths:
           headers: {}
       deprecated: false
   /api/v1/hrm/adviser/update/profile:
-    put:
+    post:
       tags:
         - Adviser
       summary: update profile
@@ -10732,49 +11018,33 @@ paths:
             example: application/json
       requestBody:
         content:
-          application/json:
+          application/x-www-form-urlencoded:
             encoding: {}
             schema:
               required:
                 - name
+                - _method
+                - message
+                - video_link
+                - prefecture
+                - personal_expertise_id
+                - gender
+                - category_name[]
+                - feature_name[]
+                - qualification_name[]
               type: object
               properties:
                 name:
                   type: string
                   description: required|min:5
                   example: shihab
-                age:
+                _method:
                   type: string
-                  example: '20'
-                carrier: 
-                  type: string
-                  example: carrier sample
-                qualification_details:
-                  type: string
-                  example: qualification_details sample
-                hobby:
-                  type: string
-                  example: hobby sample
-                fee:
-                  type: string
-                  example: fee sample
+                  example: PUT
                 message:
                   type: string
                   description: nullable|string
                   example: hello users
-                adviser_image:
-                  type: string
-                  example: ""
-                review_image:
-                  type: string
-                  example: ""
-                consulatation_image:
-                  type: string
-                  example: ""
-                evaluation: 
-                  type: string
-                tag:
-                  type: string
                 video_link:
                   type: string
                   description: nullable|string
@@ -10790,26 +11060,102 @@ paths:
                 gender:
                   type: string
                   example: male
-                category_name:
-                  type: array
-                  items:
-                    type: string
-                  example: ['夫婦関係']
-                feature_name:
-                  type: array
-                  items:
-                    type: string
-                  example: ['外国語対応']
-                qualification_name:
-                  type: array
-                  items:
-                    type: string
-                  example: ['nulla']
+                category_name[]:
+                  type: string
+                  example: numquam
+                feature_name[]:
+                  type: string
+                  example: sint
+                qualification_name[]:
+                  type: string
+                  example: nulla
         required: false
       responses:
         '200':
-          description: ''
-          headers: {}
+          description: OK
+          headers:
+            Host:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: localhost:8000
+            Date:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: Sun, 23 Aug 2020 04:24:35 GMT
+            Connection:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: close
+            X-Powered-By:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: PHP/7.3.11
+            Cache-Control:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: no-cache, private
+            Access-Control-Allow-Origin:
+              content:
+                text/plain:
+                  schema:
+                    type: string
+                  example: '*'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/updateprofile'
+              example:
+                message: Successfully updated
+                advisor:
+                  id: 11
+                  first_name: shihab
+                  last_name: ''
+                  gender: male
+                  dob: 1992-01-02
+                  age: '23'
+                  category: f
+                  evaluation: ''
+                  tag: ''
+                  fee: ''
+                  bookable: true
+                  consultation: advisor
+                  carrier: advisor
+                  qualification: ok
+                  hobby: ok
+                  feature: ok
+                  message: hello users
+                  user:
+                    id: 35
+                    username: edna.bartell
+                    email: myrtice.macejkovic@gmail.com
+                    email_verification_token: ''
+                    email_verified_at: ''
+                    created_by: ''
+                    updated_by: ''
+                    deleted_by: ''
+                    created_at: 2020-08-20T04:37:47Z
+                    updated_at: 2020-08-20T04:37:47Z
+                    deleted_at: ''
+                    role_id: 3
+                    sharing_service_id: 1
+                    active: true
+                  upload:
+                    id: 1
+                    path: uploads/images/advisor/1598156675.jpg
+                    type: image
+                    created_at: 2020-08-23T04:24:35Z
+                    updated_at: 2020-08-23T04:24:35Z
+                  schedule: ''
       deprecated: false
   /api/v1/hrm/bookable/adviser/list:
     get:
@@ -11480,7 +11826,7 @@ paths:
                 consultation_id:
                   type: integer
                   format: int32
-                  example: 10
+                  example: 1
                 topic:
                   type: string
                   example: test topic 1
@@ -11560,43 +11906,6 @@ paths:
           schema:
             type: string
             example: application/json
-      responses:
-        '200':
-          description: ''
-          headers: {}
-      deprecated: false
-  /api/v1/hrm/zoom/adviser/profile/credentials/update:
-    post:
-      tags:
-        - Zoom
-      summary: Update adviser credentials
-      operationId: UpdateAdviserCredentials
-      parameters:
-        - name: Accept
-          in: header
-          description: ''
-          required: true
-          style: simple
-          schema:
-            type: string
-            example: application/json
-      requestBody:
-        content:
-          application/x-www-form-urlencoded:
-            encoding: {}
-            schema:
-              required:
-                - api_key
-                - secret_key
-              type: object
-              properties:
-                api_key:
-                  type: string
-                  example: 'PqqvV7ICRUW0pz5DPOxNvA'
-                secret_key:
-                  type: string
-                  example: 'f695TdSGPEpJVF0pJsNiUyS2sYhG6YXPy9Zj'
-        required: false
       responses:
         '200':
           description: ''
@@ -12888,7 +13197,7 @@ paths:
                   type: integer
                   description: required|integer
                   format: int32
-                  example: 69
+                  example: 19
         required: false
       responses:
         '200':
@@ -13042,7 +13351,7 @@ paths:
           schema:
             type: integer
             format: int32
-            example: 159
+            example: 19
         - name: Accept
           in: header
           description: ''
@@ -13267,12 +13576,50 @@ paths:
           description: ''
           headers: {}
       deprecated: false
+  /api/v1/test:
+    get:
+      tags:
+        - Payment
+      summary: test create method
+      operationId: test create method
+      description: "Validation"
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
   /api/v1/hrm/client/payment/customer-card/create:
     post:
       tags:
         - Payment
       summary: Register User's card information
       operationId: paymentCreateCustomerCard
+      description: "Validation"
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            encoding: {}
+            schema:
+              required:
+                - payment_method_id
+              type: object
+              properties:
+                payment_method_id:
+                  type: string
+                  description: The payment method id
+                  example: pm_1KBd1XFz5YPUsmVrJuKfTePb
+        required: false
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /api/v1/hrm/client/payment/customer-card/update:
+    post:
+      tags:
+        - Payment
+      summary: Update User's card information
+      operationId: paymentUpdateCustomerCard
       description: "Validation"
       requestBody:
         content:
@@ -13320,7 +13667,7 @@ paths:
         '200':
           description: ""
           headers: {}
-      deprecated: false
+      deprecated: true
   /api/v1/admin/transactions:
     get:
       tags:
@@ -13643,7 +13990,6 @@ paths:
         - name: email
           in: query
           schema:
-            type: string
             description: format follow email
             nullable: true
             default: null
