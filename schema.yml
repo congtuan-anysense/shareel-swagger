@@ -7450,7 +7450,7 @@ paths:
   /api/v1/admin/message/list:
     get:
       tags:
-        - chatMessageAPI
+        - ChatMessageAPI
       summary: message list
       operationId: messagelist
       parameters:
@@ -7506,7 +7506,7 @@ paths:
   /api/v1/admin/message/{messageID}/details:
     get:
       tags:
-        - chatMessageAPI
+        - ChatMessageAPI
       summary: Chat message details
       operationId: Chatmessagedetails
       parameters:
