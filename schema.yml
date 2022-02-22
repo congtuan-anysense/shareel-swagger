@@ -10725,10 +10725,13 @@ paths:
                   example: hello users
                 adviser_image:
                   type: string
+                  example: ""
                 review_image:
                   type: string
+                  example: ""
                 consulatation_image:
                   type: string
+                  example: ""
                 evaluation: 
                   type: string
                 tag:
