@@ -2225,6 +2225,27 @@ paths:
           description: ''
           headers: {}
       deprecated: false
+  /api/v1/hrm/adviser/bank/info:
+    get:
+      tags:
+        - Bank
+      summary: Get bank info for adviser
+      description: "Get bank info for adviser"
+      operationId: GetallBankInforAdviser
+      parameters:
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
   /api/v1/hrm/client/coupons/create:
     post:
       tags:
