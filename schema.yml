@@ -13621,6 +13621,86 @@ paths:
             description: ""
             headers: {}
         deprecated: false
+  /api/v1/hrm/client/payment/coupon/exists-card:
+    post:
+        tags:
+          - Payment
+        summary: payment a coupon with exists card
+        description: PaymentAcouponExistsCard
+        parameters:
+          - name: Accept
+            in: header
+            description: ''
+            required: true
+            style: simple
+            schema:
+              type: string
+              example: application/json
+        requestBody:
+          content:
+            application/json:
+              encoding: 
+                ids:
+                  allowReserved: true
+              schema:
+                required:
+                  - coupon_type_id
+                  - payment_intent_id
+                type: object
+                properties:
+                  coupon_type_id:
+                    type: string
+                    description: id coupon 
+                    example: 1
+                  payment_intent_id:
+                    type: string
+                    description: id payment intent 
+                    example: pi_1EUnBEF5IfL0eXz99dkRR60n
+        responses:
+          '200':
+            description: ""
+            headers: {}
+        deprecated: false
+  /api/v1/hrm/client/payment/coupon/new-card:
+    post:
+        tags:
+          - Payment
+        summary: payment a coupon with new card
+        description: PaymentAcouponNewCard
+        parameters:
+          - name: Accept
+            in: header
+            description: ''
+            required: true
+            style: simple
+            schema:
+              type: string
+              example: application/json
+        requestBody:
+          content:
+            application/json:
+              encoding: 
+                ids:
+                  allowReserved: true
+              schema:
+                required:
+                  - coupon_type_id
+                  - payment_intent_id
+                type: object
+                properties:
+                  coupon_type_id:
+                    type: string
+                    description: id coupon 
+                    example: 1
+                  payment_intent_id:
+                    type: string
+                    description: id payment intent 
+                    example: pi_1EUnBEF5IfL0eXz99dkRR60n
+        responses:
+          '200':
+            description: ""
+            headers: {}
+        deprecated: false
   /api/v1/admin/payment/{user_id}/history:
     get:
       tags: 
