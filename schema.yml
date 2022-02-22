@@ -8898,6 +8898,7 @@ paths:
         - Notice
       summary: All Notice
       operationId: AllNotice
+      security: []
       parameters:
         - name: Accept
           in: header
@@ -10692,7 +10693,7 @@ paths:
             example: application/json
       requestBody:
         content:
-          application/x-www-form-urlencoded:
+          application/json:
             encoding: {}
             schema:
               required:
