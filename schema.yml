@@ -10755,12 +10755,12 @@ paths:
                   type: array
                   items:
                     type: string
-                  example: ['外国語対応']
+                  example: ['category name text']
                 feature_name:
                   type: array
                   items:
                     type: string
-                  example: ['category name text']
+                  example: ['外国語対応']
                 qualification_name:
                   type: array
                   items:
