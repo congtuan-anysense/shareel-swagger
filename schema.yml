@@ -13571,6 +13571,56 @@ paths:
             description: ""
             headers: {}
         deprecated: false
+  /api/v1/hrm/client/payment/consultation/new-card:
+    post:
+        tags:
+          - Payment
+        summary: payment a consultation with new card
+        description: PaymentAnewCard
+        parameters:
+          - name: Accept
+            in: header
+            description: ''
+            required: true
+            style: simple
+            schema:
+              type: string
+              example: application/json
+        requestBody:
+          content:
+            application/json:
+              encoding: 
+                ids:
+                  allowReserved: true
+              schema:
+                required:
+                  - payment_method_id
+                  - consultation_id
+                  - amount
+                  - payment_intent_id
+                type: object
+                properties:
+                  payment_method_id:
+                    type: string
+                    description: id payment method 
+                    example: pm_1EUnBEF5IfL0eXz99dkRR60n
+                  consultation_id:
+                    type: number
+                    description: consultation id 
+                    example: 1
+                  amount:
+                    type: string
+                    description: amount payment 
+                    example: 1000
+                  payment_intent_id:
+                    type: string
+                    description: id payment intent 
+                    example: pi_1EUnBEF5IfL0eXz99dkRR60n
+        responses:
+          '200':
+            description: ""
+            headers: {}
+        deprecated: false
   /api/v1/admin/payment/{user_id}/history:
     get:
       tags: 
