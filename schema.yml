@@ -10677,7 +10677,7 @@ paths:
           headers: {}
       deprecated: false
   /api/v1/hrm/adviser/update/profile:
-    post:
+    put:
       tags:
         - Adviser
       summary: update profile
@@ -10698,28 +10698,41 @@ paths:
             schema:
               required:
                 - name
-                - _method
-                - message
-                - video_link
-                - prefecture
-                - personal_expertise_id
-                - gender
-                - category_name[]
-                - feature_name[]
-                - qualification_name[]
               type: object
               properties:
                 name:
                   type: string
                   description: required|min:5
                   example: shihab
-                _method:
+                age:
                   type: string
-                  example: PUT
+                  example: '20'
+                carrier: 
+                  type: string
+                  example: carrier sample
+                qualification_details:
+                  type: string
+                  example: qualification_details sample
+                hobby:
+                  type: string
+                  example: hobby sample
+                fee:
+                  type: string
+                  example: fee sample
                 message:
                   type: string
                   description: nullable|string
                   example: hello users
+                adviser_image:
+                  type: string
+                review_image:
+                  type: string
+                consulatation_image:
+                  type: string
+                evaluation: 
+                  type: string
+                tag:
+                  type: string
                 video_link:
                   type: string
                   description: nullable|string
@@ -10735,15 +10748,21 @@ paths:
                 gender:
                   type: string
                   example: male
-                category_name[]:
-                  type: string
-                  example: numquam
-                feature_name[]:
-                  type: string
-                  example: sint
-                qualification_name[]:
-                  type: string
-                  example: nulla
+                category_name:
+                  type: array
+                  items:
+                    type: string
+                  example: ['外国語対応']
+                feature_name:
+                  type: array
+                  items:
+                    type: string
+                  example: ['shin']
+                qualification_name:
+                  type: array
+                  items:
+                    type: string
+                  example: ['nulla']
         required: false
       responses:
         '200':
