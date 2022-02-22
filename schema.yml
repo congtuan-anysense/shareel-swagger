@@ -374,16 +374,8 @@ paths:
             application/json:
               schema:
                 oneOf:
-                  - type: object
-                    properties:
-                      message:
-                        type: string
-                        example: 予約が残っています！
-                  - type: object
-                    properties:
-                      message:
-                        type: string
-                        example: お支払いが未決済です！
+                  - $ref: '#/components/schemas/WithdrawPaymentError'
+                  - $ref: '#/components/schemas/WithdrawConsultationError'
       deprecated: false
   /api/v1/hrm/auth/adviser/password/email:
     post:
@@ -22604,6 +22596,26 @@ components:
         deleted_at: ''
         created_at: ''
         updated_at: ''
+    WithdrawPaymentError:
+      title: WithdrawPaymentError
+      required:
+        - message
+      type: object
+      properties:
+        message:
+          type: string
+      example:
+        message: お支払いが未決済です！
+    WithdrawConsultationError:
+      title: WithdrawConsultationError
+      required:
+        - message
+      type: object
+      properties:
+        message:
+          type: string
+      example:
+        message: 予約が残っています！
   securitySchemes:
     httpBearer:
       type: http
