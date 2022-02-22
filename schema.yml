@@ -357,8 +357,16 @@ paths:
         required: false
       responses:
         '200':
-          description: ''
+          description: 'Success'
           headers: {}
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: 正常に撤回
         '400':
           description: There are reservations left
           headers: {}
