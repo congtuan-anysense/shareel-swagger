@@ -6409,13 +6409,13 @@ paths:
                 - carrier
                 - qualification
                 - hobby
-                - _method
                 - video_link
                 - prefecture
                 - gender
                 - email
                 - fee
                 - birthday
+                - approved_status
               type: object
               properties:
                 name:
@@ -6434,9 +6434,6 @@ paths:
                   type: string
                   description: nullable|string|max:255
                   example: ok
-                _method:
-                  type: string
-                  example: PUT
                 video_link:
                   type: string
                   description: nullable|string
@@ -6465,6 +6462,10 @@ paths:
                 identification_status:
                   type: string
                   example: unconfirmed
+                approved_status: 
+                  type: string
+                  enum: ['approved','not_approved','unconfirmed']
+                  example: 'unconfirmed'
         required: false
       responses:
         '200':
