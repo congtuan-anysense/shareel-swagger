@@ -383,6 +383,7 @@ paths:
         - Auth Adviser
       summary: Advisor Request Reset Password
       operationId: AdvisorRequestResetPassword
+      security: []
       parameters:
         - name: Accept
           in: header
@@ -468,6 +469,7 @@ paths:
         - Auth Adviser
       summary: Adviser Register
       operationId: AdviserRegister
+      security: []
       parameters:
         - name: Accept
           in: header
