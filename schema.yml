@@ -13526,6 +13526,181 @@ paths:
           description: ''
           headers: {}
       deprecated: false
+  /api/v1/hrm/client/payment/consultation/exists-card:
+    post:
+        tags:
+          - Payment
+        summary: payment a consultation with exists card
+        description: PaymentAExistsCard
+        parameters:
+          - name: Accept
+            in: header
+            description: ''
+            required: true
+            style: simple
+            schema:
+              type: string
+              example: application/json
+        requestBody:
+          content:
+            application/json:
+              encoding: 
+                ids:
+                  allowReserved: true
+              schema:
+                required:
+                  - consultation_id
+                  - amount
+                  - payment_intent_id
+                type: object
+                properties:
+                  consultation_id:
+                    type: number
+                    description: consultation id 
+                    example: 1
+                  amount:
+                    type: string
+                    description: amount payment 
+                    example: 1000
+                  payment_intent_id:
+                    type: string
+                    description: id payment intent 
+                    example: pi_1EUnBEF5IfL0eXz99dkRR60n
+        responses:
+          '200':
+            description: ""
+            headers: {}
+        deprecated: false
+  /api/v1/hrm/client/payment/consultation/new-card:
+    post:
+        tags:
+          - Payment
+        summary: payment a consultation with new card
+        description: PaymentAnewCard
+        parameters:
+          - name: Accept
+            in: header
+            description: ''
+            required: true
+            style: simple
+            schema:
+              type: string
+              example: application/json
+        requestBody:
+          content:
+            application/json:
+              encoding: 
+                ids:
+                  allowReserved: true
+              schema:
+                required:
+                  - payment_method_id
+                  - consultation_id
+                  - amount
+                  - payment_intent_id
+                type: object
+                properties:
+                  payment_method_id:
+                    type: string
+                    description: id payment method 
+                    example: pm_1EUnBEF5IfL0eXz99dkRR60n
+                  consultation_id:
+                    type: number
+                    description: consultation id 
+                    example: 1
+                  amount:
+                    type: string
+                    description: amount payment 
+                    example: 1000
+                  payment_intent_id:
+                    type: string
+                    description: id payment intent 
+                    example: pi_1EUnBEF5IfL0eXz99dkRR60n
+        responses:
+          '200':
+            description: ""
+            headers: {}
+        deprecated: false
+  /api/v1/hrm/client/payment/coupon/exists-card:
+    post:
+        tags:
+          - Payment
+        summary: payment a coupon with exists card
+        description: PaymentAcouponExistsCard
+        parameters:
+          - name: Accept
+            in: header
+            description: ''
+            required: true
+            style: simple
+            schema:
+              type: string
+              example: application/json
+        requestBody:
+          content:
+            application/json:
+              encoding: 
+                ids:
+                  allowReserved: true
+              schema:
+                required:
+                  - coupon_type_id
+                  - payment_intent_id
+                type: object
+                properties:
+                  coupon_type_id:
+                    type: string
+                    description: id coupon 
+                    example: 1
+                  payment_intent_id:
+                    type: string
+                    description: id payment intent 
+                    example: pi_1EUnBEF5IfL0eXz99dkRR60n
+        responses:
+          '200':
+            description: ""
+            headers: {}
+        deprecated: false
+  /api/v1/hrm/client/payment/coupon/new-card:
+    post:
+        tags:
+          - Payment
+        summary: payment a coupon with new card
+        description: PaymentAcouponNewCard
+        parameters:
+          - name: Accept
+            in: header
+            description: ''
+            required: true
+            style: simple
+            schema:
+              type: string
+              example: application/json
+        requestBody:
+          content:
+            application/json:
+              encoding: 
+                ids:
+                  allowReserved: true
+              schema:
+                required:
+                  - coupon_type_id
+                  - payment_intent_id
+                type: object
+                properties:
+                  coupon_type_id:
+                    type: string
+                    description: id coupon 
+                    example: 1
+                  payment_intent_id:
+                    type: string
+                    description: id payment intent 
+                    example: pi_1EUnBEF5IfL0eXz99dkRR60n
+        responses:
+          '200':
+            description: ""
+            headers: {}
+        deprecated: false
   /api/v1/admin/payment/{user_id}/history:
     get:
       tags: 
