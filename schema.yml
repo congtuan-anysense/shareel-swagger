@@ -6406,16 +6406,6 @@ paths:
             schema:
               required:
                 - name
-                - carrier
-                - qualification
-                - hobby
-                - video_link
-                - prefecture
-                - gender
-                - email
-                - fee
-                - birthday
-                - approved_status
               type: object
               properties:
                 name:
