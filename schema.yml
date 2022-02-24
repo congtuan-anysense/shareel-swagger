@@ -8841,7 +8841,7 @@ paths:
     get:
       tags:
         - Notice
-      summary: All Notices
+      summary: All Notice
       operationId: AllNotice
       parameters:
         - name: Accept
