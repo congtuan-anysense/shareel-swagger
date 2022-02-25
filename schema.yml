@@ -14022,6 +14022,7 @@ paths:
         - Account
       summary: Admin - update account for user
       description: Admin - update account for user
+
       parameters:
         - name: Accept
           in: header
@@ -14031,62 +14032,58 @@ paths:
           schema:
             type: string
             example: application/json
-        - name: id
-          in: path
+        - name: _method
+          in: header
+          description: ''
           required: true
-          schema:
-            type: integer
-            example: 316
-        - name: email
-          in: query
-          schema:
-            description: format follow email
-            nullable: true
-            default: null
-        - name: name
-          in: query
+          style: simple
           schema:
             type: string
-            description: maximum is 50, minimum is 2
-            example: example name edit
-        - name: type
-          in: query
-          schema:
-            type: string
-            description: must be in a set (administrator, operator)
-            enum: ["administrator", "operator"]
-            nullable: true
-            default: null
-        - name: active
-          in: query
-          schema:
-            type: integer
-            enum: [0,1]
-            nullable: true
-            default: null
-        - name: is_change_password
-          in: query
-          required: true
-          schema:
-            type: string
-            nullable: true
-            description: if is_change_password = 0 dont allow change password, if it = 1 allow change password
-            enum: ["0", "1"]
-            default: 0
-        - name: password
-          in: query
-          schema:
-            type: string
-            description: regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9.\-_]{8,16}$/\'
-            nullable: true
-            default: null
-        - name: password_confirmation
-          in: query
-          schema:
-            type: string
-            description: regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9.\-_]{8,16}$/\'
-            nullable: true
-            default: null
+            example: PUT
+      requestBody:
+        content:
+          application/json:
+            encoding: {}
+            schema:
+              required:
+                - email
+                - name
+                - password
+                - type
+                - active
+              type: object
+              properties:
+                id:
+                  type: number
+                  description: id account
+                  example: 313
+                email:
+                  type: string
+                  description: format follow email
+                  example: example@email.com
+                name:
+                  type: string
+                  example: example name
+                type:
+                  type: string
+                  description: must be in a set (administrator, operator)
+                  example: administrator
+                active:
+                  type: integer
+                  enum: [0,1]
+                  example: 1
+                is_change_password:
+                  type: number
+                  description: must be in a set (0, 1) 0 = not allow change password, 1 = allow change password
+                  example: 0
+                password:
+                  type: string
+                  description: regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9.\-_]{8,16}$/'
+                  example: passworD1
+                password_confirmation:
+                  type: string
+                  description: regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9.\-_]{8,16}$/'
+                  example: passworD1
       responses:
         '200':
           description: ""
