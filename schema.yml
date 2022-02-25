@@ -14020,8 +14020,8 @@ paths:
     put:
       tags:
         - Account
-      summary: Admin - update account
-      description: Admin - update account
+      summary: Admin - update account for user
+      description: Admin - update account for user
       parameters:
         - name: Accept
           in: header
@@ -14049,13 +14049,6 @@ paths:
             type: string
             description: maximum is 50, minimum is 2
             example: example name edit
-        - name: password
-          in: query
-          schema:
-            type: string
-            description: regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9.\-_]{8,16}$/\'
-            nullable: true
-            default: null
         - name: type
           in: query
           schema:
@@ -14069,6 +14062,27 @@ paths:
           schema:
             type: integer
             enum: [0,1]
+            nullable: true
+            default: null
+        - name: is_change_password
+          in: query
+          schema:
+            type: number
+            nullable: true
+            description: if is_change_password = 0 dont allow change password, if it = 1 allow change password
+            default: 0
+        - name: password
+          in: query
+          schema:
+            type: string
+            description: regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9.\-_]{8,16}$/\'
+            nullable: true
+            default: null
+        - name: password_confirmation
+          in: query
+          schema:
+            type: string
+            description: regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9.\-_]{8,16}$/\'
             nullable: true
             default: null
       responses:
