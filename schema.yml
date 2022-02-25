@@ -14074,9 +14074,9 @@ paths:
                 password:
                   type: string
                   example: passworD1
-                password:
+                password_confirmation:
                   type: string
-                  example: password_confirmation
+                  example: passworD1
         required: false
       responses:
         '200':
