@@ -14042,15 +14042,9 @@ paths:
             example: PUT
       requestBody:
         content:
-          application/json:
+          application/x-www-form-urlencoded:
             encoding: {}
             schema:
-              required:
-                - email
-                - name
-                - password
-                - type
-                - active
               type: object
               properties:
                 id:
@@ -14059,31 +14053,31 @@ paths:
                   example: 313
                 email:
                   type: string
-                  description: format follow email
-                  example: example@email.com
+                  example: example@gmail.com
                 name:
                   type: string
-                  example: example name
-                type:
+                  example: example
+                type: 
                   type: string
-                  description: must be in a set (administrator, operator)
-                  example: administrator
+                  enum: ['administrator', 'operator']
+                  example: operator
                 active:
-                  type: integer
-                  enum: [0,1]
-                  example: 1
+                  type: number
+                  enum: [0, 1]
+                  description: 0 = inactive , 1 = active
+                  example: 0
                 is_change_password:
                   type: number
-                  description: must be in a set (0, 1) 0 = not allow change password, 1 = allow change password
+                  enum: [0, 1]
+                  description: 0 = dont allow change password , 1 = allow change password
                   example: 0
                 password:
                   type: string
-                  description: regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9.\-_]{8,16}$/'
                   example: passworD1
-                password_confirmation:
+                password:
                   type: string
-                  description: regex:/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[a-zA-Z0-9.\-_]{8,16}$/'
-                  example: passworD1
+                  example: password_confirmation
+        required: false
       responses:
         '200':
           description: ""
