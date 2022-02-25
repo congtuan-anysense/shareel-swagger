@@ -14066,10 +14066,12 @@ paths:
             default: null
         - name: is_change_password
           in: query
+          required: true
           schema:
-            type: number
+            type: string
             nullable: true
             description: if is_change_password = 0 dont allow change password, if it = 1 allow change password
+            enum: ["0", "1"]
             default: 0
         - name: password
           in: query
