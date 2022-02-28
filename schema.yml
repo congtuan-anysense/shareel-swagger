@@ -1561,7 +1561,7 @@ paths:
           description: 'Success'
           content:
             application/json:
-              schema: 
+              schema:
                 type: object
                 properties:
                   message:
@@ -1587,19 +1587,19 @@ paths:
                         created_at:
                           type: string
                           example: ""
-                        updated_at: 
+                        updated_at:
                           type: string
                           example: ""
-                        deleted_at: 
+                        deleted_at:
                           type: string
                           example: ""
                         created_by:
                           type: string
                           example: ""
-                        updated_by: 
+                        updated_by:
                           type: string
                           example: ""
-                        deleted_by: 
+                        deleted_by:
                           type: string
                           example: ""
       deprecated: false
@@ -2350,7 +2350,7 @@ paths:
             type: string
             example: application/json
       responses:
-        '200': 
+        '200':
           description: Success
           headers: {}
     post:
@@ -6452,7 +6452,7 @@ paths:
                 identification_status:
                   type: string
                   example: unconfirmed
-                approved_status: 
+                approved_status:
                   type: string
                   enum: ['approved','not_approved','unconfirmed']
                   example: 'unconfirmed'
@@ -8802,7 +8802,7 @@ paths:
                         id: 1
                         path: storage/static/user/user_avatar.png
       deprecated: false
-    delete: 
+    delete:
       tags:
         - Notice
       summary: Delete Notice
@@ -8830,9 +8830,9 @@ paths:
           description: 'Success'
           content:
             application/json:
-              schema: 
+              schema:
                 type: object
-                properties: 
+                properties:
                   message:
                     type: string
                     example: Success!
@@ -10839,7 +10839,7 @@ paths:
               properties:
                 bank_name:
                   type: string
-                  description: only katakana [ there maybe ALPHABET or spacial char  ） ． ー ／ 「 」 or number 0-9] 
+                  description: only katakana [ there maybe ALPHABET or spacial char  ） ． ー ／ 「 」 or number 0-9]
                   example: （ ） ． ー ／ テスト 「 」A BCDEF
                 account_number:
                   type: string
@@ -10848,7 +10848,7 @@ paths:
                   example: 1234567890
                 account_name:
                   type: string
-                  description: only katakana [ there maybe ALPHABET or spacial char  ） ． ー ／ 「 」 or number 0-9] 
+                  description: only katakana [ there maybe ALPHABET or spacial char  ） ． ー ／ 「 」 or number 0-9]
                   example: （ ） ． ー ／ テスト 「 」A BCDEF
                 account_type:
                   type: string
@@ -13428,12 +13428,62 @@ paths:
           description: ''
           headers: {}
       deprecated: false
-  /api/v1/hrm/adviser/report/check-income-deposit-status:
+  /api/v1/hrm/adviser/income/get-payment-application-info:
     get:
       tags:
         - Adviser > Report | 専門家 > レポート
       summary: Check status to enable/disable Deposit(入会申請をする) button
       operationId: adviserReportCheckApplyForDepositStatus
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /api/v1/hrm/adviser/report/check-income-deposit-status:
+    get:
+      tags:
+        - Adviser > Payment Withdraw | 専門家 > 入金申請
+      summary: Adviser get the info of withdraw amount
+      operationId: adviserIncomeWithdrawInfo
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /api/v1/hrm/adviser/income/apply-withdraw:
+    post:
+      tags:
+        - Adviser > Payment Withdraw | 専門家 > 入金申請
+      summary: Adviser apply to withdraw the income
+      operationId: adviserIncomeApplyWithdraw
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+  /api/v1/hrm/adviser/income/paid-payouts:
+    get:
+      tags:
+        - Adviser > Payouts | 専門家 > 支払一覧
+      summary: get the list of paid payouts of adviser
+      operationId: adviserIncomePaidPayoutsByYear
+      parameters:
+        - name: year
+          in: query
+          description: 'Year to get data. Format: YYYY. Default: currently month'
+          required: false
+          style: simple
+          schema:
+            type: string
+            example: 2022-01
+        - name: perPage
+          in: query
+          description: 'Custom number records per page. Optional.'
+          required: false
+          style: simple
+          schema:
+            type: integer
+            example: 100
       responses:
         '200':
           description: ''
@@ -13533,7 +13583,7 @@ paths:
         requestBody:
           content:
             application/json:
-              encoding: 
+              encoding:
                 ids:
                   allowReserved: true
               schema:
@@ -13545,15 +13595,15 @@ paths:
                 properties:
                   consultation_id:
                     type: number
-                    description: consultation id 
+                    description: consultation id
                     example: 1
                   amount:
                     type: string
-                    description: amount payment 
+                    description: amount payment
                     example: 1000
                   payment_intent_id:
                     type: string
-                    description: id payment intent 
+                    description: id payment intent
                     example: pi_1EUnBEF5IfL0eXz99dkRR60n
         responses:
           '200':
@@ -13578,7 +13628,7 @@ paths:
         requestBody:
           content:
             application/json:
-              encoding: 
+              encoding:
                 ids:
                   allowReserved: true
               schema:
@@ -13591,19 +13641,19 @@ paths:
                 properties:
                   payment_method_id:
                     type: string
-                    description: id payment method 
+                    description: id payment method
                     example: pm_1EUnBEF5IfL0eXz99dkRR60n
                   consultation_id:
                     type: number
-                    description: consultation id 
+                    description: consultation id
                     example: 1
                   amount:
                     type: string
-                    description: amount payment 
+                    description: amount payment
                     example: 1000
                   payment_intent_id:
                     type: string
-                    description: id payment intent 
+                    description: id payment intent
                     example: pi_1EUnBEF5IfL0eXz99dkRR60n
         responses:
           '200':
@@ -13628,7 +13678,7 @@ paths:
         requestBody:
           content:
             application/json:
-              encoding: 
+              encoding:
                 ids:
                   allowReserved: true
               schema:
@@ -13639,11 +13689,11 @@ paths:
                 properties:
                   coupon_type_id:
                     type: string
-                    description: id coupon 
+                    description: id coupon
                     example: 1
                   payment_intent_id:
                     type: string
-                    description: id payment intent 
+                    description: id payment intent
                     example: pi_1EUnBEF5IfL0eXz99dkRR60n
         responses:
           '200':
@@ -13668,7 +13718,7 @@ paths:
         requestBody:
           content:
             application/json:
-              encoding: 
+              encoding:
                 ids:
                   allowReserved: true
               schema:
@@ -13679,11 +13729,11 @@ paths:
                 properties:
                   coupon_type_id:
                     type: string
-                    description: id coupon 
+                    description: id coupon
                     example: 1
                   payment_intent_id:
                     type: string
-                    description: id payment intent 
+                    description: id payment intent
                     example: pi_1EUnBEF5IfL0eXz99dkRR60n
         responses:
           '200':
@@ -13692,7 +13742,7 @@ paths:
         deprecated: false
   /api/v1/admin/payment/{user_id}/history:
     get:
-      tags: 
+      tags:
         - Payment
       summary: Get history of payment
       description: "Get history of payment"
@@ -13774,7 +13824,7 @@ paths:
       requestBody:
         content:
           application/json:
-            encoding: 
+            encoding:
               ids:
                 allowReserved: true
             schema:
@@ -13860,7 +13910,7 @@ paths:
       requestBody:
         content:
           application/json:
-            encoding: 
+            encoding:
               ids:
                 allowReserved: true
             schema:
@@ -14060,7 +14110,7 @@ paths:
                 name:
                   type: string
                   example: example
-                type: 
+                type:
                   type: string
                   enum: ['administrator', 'operator']
                   example: operator
