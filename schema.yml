@@ -10847,8 +10847,8 @@ paths:
               properties:
                 bank_name:
                   type: string
-                  description: only katakana [ there maybe ALPHABET or spacial char  ） ． ー ／ 「 」 or number 0-9]
-                  example: （ ） ． ー ／ テスト 「 」A BCDEF
+                  description: required
+                  example: abc bank
                 account_number:
                   type: string
                   description: sometimes|string|max:255
