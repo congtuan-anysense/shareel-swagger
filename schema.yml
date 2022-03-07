@@ -2891,7 +2891,7 @@ paths:
     get:
       tags:
         - Consultation
-      summary: Adviser upcoming consultation
+      summary: Adviser upcoming consultation list (or list today)
       operationId: Adviserupcomingconsultation
       parameters:
         - name: Accept
