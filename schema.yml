@@ -2903,13 +2903,13 @@ paths:
             type: string
             example: application/json
         - name: date
-          in: header
+          in: path
           description: if date="today" (optional) get consultation list today
           required: false
           style: simple
           schema:
             type: string
-            example: application/json
+            example: today
       responses:
         '200':
           description: ''
