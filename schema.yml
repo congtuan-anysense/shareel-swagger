@@ -6052,7 +6052,7 @@ paths:
       tags:
         - Mail Template
       summary: get all mail template
-      operationId: getamailtemplate
+      operationId: getAllMailTemplate
       parameters:
         - name: Accept
           in: header
