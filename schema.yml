@@ -6047,6 +6047,73 @@ paths:
           description: ''
           headers: {}
       deprecated: false
+  /api/v1/admin/email/templates/get-all:
+    get:
+      tags:
+        - Mail Template
+      summary: get all mail template
+      operationId: getamailtemplate
+      parameters:
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
+    put:
+      tags:
+        - Mail Template
+      summary: Update a mail template
+      operationId: Updateamailtemplate
+      parameters:
+        - name: id
+          in: path
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: integer
+            format: int32
+            example: 2
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+      requestBody:
+        content:
+          application/x-www-form-urlencoded:
+            encoding: {}
+            schema:
+              required:
+                - title
+                - content
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: required|string|min:5
+                  example: user invitation
+                content:
+                  type: string
+                  description: required|string|min:10
+                  example: oksd sdsd sds
+        required: false
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
   /api/v1/admin/user/adviser/{userID}/delete:
     delete:
       tags:
