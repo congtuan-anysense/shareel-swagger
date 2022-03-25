@@ -11115,7 +11115,6 @@ paths:
                     updated_at: 2020-08-23T04:24:35Z
                   schedule: ''
       deprecated: false
-  
   /api/v1/admin/user/adviser/{adviserId}/profile/image:
     post:
       tags:
@@ -11132,7 +11131,7 @@ paths:
             type: string
             example: application/json
         - name: adviserId
-          in: query
+          in: path
           required: true
           schema:
             type: string
@@ -11154,7 +11153,7 @@ paths:
         '200':
           description: OK
           headers: {}
-        deprecated: false
+      deprecated: false
   /api/v1/hrm/bookable/adviser/list:
     get:
       tags:
