@@ -11115,6 +11115,46 @@ paths:
                     updated_at: 2020-08-23T04:24:35Z
                   schedule: ''
       deprecated: false
+  
+  /api/v1/admin/user/adviser/{adviserId}/profile/image:
+    post:
+      tags:
+        - Adviser
+      summary: upload identity image
+      operationId: uploadidentityimage
+      parameters:
+        - name: Accept
+          in: header
+          description: ''
+          required: true
+          style: simple
+          schema:
+            type: string
+            example: application/json
+        - name: adviserId
+          in: query
+          required: true
+          schema:
+            type: string
+            example: 79
+      requestBody:
+        content:
+          multipart/form-data:
+            encoding: {}
+            schema:
+              required:
+                - image
+              type: object
+              properties:
+                image:
+                  type: string
+                  format: binary
+        required: false
+      responses:
+        '200':
+          description: OK
+          headers: {}
+        deprecated: false
   /api/v1/hrm/bookable/adviser/list:
     get:
       tags:
