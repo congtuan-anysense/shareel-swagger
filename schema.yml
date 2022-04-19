@@ -13595,6 +13595,27 @@ paths:
           description: ''
           headers: {}
       deprecated: false
+  /api/v1/hrm/adviser/adviser/income/payouts/{id}:
+    post:
+      tags:
+        - Adviser > Payment Withdraw | 専門家 > 入金申請
+      summary: Adviser inCome Payouts
+      operationId: adviserIncomePayouts
+      parameters:
+        - name: id
+          in: path
+          description: 'id of adviser payout'
+          required: true
+          style: simple
+          schema:
+            type: integer
+            format: int32
+            example: 19
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
   /api/v1/hrm/adviser/income/paid-payouts:
     get:
       tags:
