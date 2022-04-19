@@ -13623,6 +13623,26 @@ paths:
           description: ''
           headers: {}
       deprecated: false
+  /api/v1/hrm/adviser/income/get-first-payout-date:
+    get:
+      tags:
+        - Adviser > Payouts | 専門家 > 支払一覧
+      summary: Get first payout of adviser
+      operationId: getFirstPayoutOfAdviser
+      parameters:
+        - name: format
+          in: query
+          description: 'format: the format of return date, default is Y'
+          required: false
+          style: simple
+          schema:
+            type: string
+            example: Y-m-d
+      responses:
+        '200':
+          description: ''
+          headers: {}
+      deprecated: false
   /api/v1/test:
     get:
       tags:
